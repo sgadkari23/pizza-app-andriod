@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Pizza Ordering App</string>
+    <string name="meat_supreme">Meat Supreme</string>
+    <string name="super_hawaiian">Super Hawaiian</string>
+    <string name="veggie">Veggie</string>
+    <string name="mediterranean">Mediterranean</string>
+    <string name="cheddar_supreme">Cheddar Supreme</string>
+    <string name="please_choose_pizza_toppings">Please choose pizza toppings</string>
+    <string name="please_proceed_to_checkout">Please Proceed to Checkout</string>
+    <string name="please_confirm_your_order">Please Confirm Your Order</string>
+    <string name="please_choose_your_pizza_from_the_menu">Please choose your pizza from the menu</string>
+    <string name="app_logo">app_logo</string>
+    <string name="menu_icon">menu-icon</string>
+    <string name="rb_small">Small</string>
+    <string name="rb_medium">Medium</string>
+    <string name="rb_large">Large</string>
+    <string name="rb_extra_large">Extra-Large</string>
+    <string name="splash_screen">splash-screen</string>
+</resources>

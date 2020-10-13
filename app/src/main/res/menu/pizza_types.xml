@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/meatSupreme"
+        android:title="@string/meat_supreme"
+        android:orderInCategory="1" />
+
+    <item
+        android:id="@+id/superHawaiian"
+        android:title="@string/super_hawaiian"
+        android:orderInCategory="2" />
+
+    <item
+        android:id="@+id/veggie"
+        android:title="@string/veggie"
+        android:orderInCategory="3" />
+
+    <item
+        android:id="@+id/mediterranean"
+        android:title="@string/mediterranean"
+        android:orderInCategory="4" />
+
+    <item
+        android:id="@+id/cheddarSupreme"
+        android:title="@string/cheddar_supreme"
+        android:orderInCategory="1" />
+
+</menu>
