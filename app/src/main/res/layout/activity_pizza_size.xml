@@ -35,28 +35,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:text="@string/rb_small" />
+            android:text="@string/rb_small"
+            tools:text="Small" />
 
         <RadioButton
             android:id="@+id/rbMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:text="@string/rb_medium" />
+            android:text="@string/rb_medium"
+            tools:text="Medium" />
 
         <RadioButton
             android:id="@+id/rbLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:text="@string/rb_large" />
+            android:text="@string/rb_large"
+            tools:text="Large" />
 
         <RadioButton
             android:id="@+id/rbExtraLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:text="@string/rb_extra_large" />
+            android:text="@string/rb_extra_large"
+            tools:text="Extra-Large" />
     </RadioGroup>
 
     <ImageView

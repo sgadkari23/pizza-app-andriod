@@ -10,11 +10,20 @@ class CheckoutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_checkout)
+        val order = intent.extras?.get("pizzaOrder") as Order
 
-       // val intent = intent
-       // val message = intent.getStringExtra("PizzaMenueType")
         val textView = findViewById<TextView>(R.id.textView8)
-        textView.text = intent.getStringExtra("PizzaMenueType")
+        textView.text = order.pizzaType
+
+        val textView1 = findViewById<TextView>(R.id.textView9)
+        textView1.text = order.pizzaSize
+
+
+        // val intent = intent
+       // val message = intent.getStringExtra("PizzaMenueType")
+       /* val textView = findViewById<TextView>(R.id.textView8)
+
+        textView.text = intent.getStringExtra("PizzaMenueType") --- supriya */
 
        /* val textView1 = findViewById<TextView>(R.id.textView9)
         textView.text = message
