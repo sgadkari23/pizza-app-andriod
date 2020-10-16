@@ -5,32 +5,43 @@ import android.os.Bundle
 import android.view.View
 import android.widget.CheckBox
 import androidx.appcompat.app.AppCompatActivity
-import com.example.pizzaorderingapp.R.id.checkBox
 
 class PizzaToppingActivity : AppCompatActivity() {
     var order:Order? = null
-
+    lateinit var checkBoxCheese: CheckBox
+    lateinit var checkBoxGreenPepper: CheckBox
+    lateinit var checkBoxSmokedHam: CheckBox
+    lateinit var checkBoxSpinach: CheckBox
+    lateinit var checkBoxBlackOlives: CheckBox
+    val toppings = StringBuilder()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pizza_topping)
         order = intent.extras?.get("pizzaOrder") as Order
-
-        val Cheese = (CheckBox)findViewById(checkBox);
-        val GreenPepper = (CheckBox)findViewById(R.id.checkBox2);
-        val SmokedHam = (CheckBox)findViewById(R.id.checkBox3);
-        val Spinach = (CheckBox)findViewById(R.id.checkBox4);
-        //Button btn = (Button)findViewById(R.id.getBtn);
+        checkBoxCheese = findViewById(R.id.checkBoxCheese)
+        checkBoxGreenPepper = findViewById(R.id.checkBoxGreenPepper)
+        checkBoxSmokedHam = findViewById(R.id.checkBoxSmokedHam)
+        checkBoxSpinach = findViewById(R.id.checkBoxSpinach)
+        checkBoxBlackOlives = findViewById(R.id.checkBoxBlackOlives)
     }
 
     // Method to handle show button on click
     fun handleOnCheckoutButtonClick(v: View) {
-        if (v.id == R.id.btnCheckout) {
+        if (checkBoxCheese.isChecked)
+            toppings.append("\n" + getString(R.string.toppings_cheese))
+        if (checkBoxGreenPepper.isChecked)
+            toppings.append("\n" + getString(R.string.toppings_greenpepper))
+        if (checkBoxSmokedHam.isChecked)
+            toppings.append("\n" + getString(R.string.toppings_smokedham))
+        if (checkBoxSpinach.isChecked)
+            toppings.append("\n" + getString(R.string.toppings_spinach))
+        if (checkBoxBlackOlives.isChecked)
+            toppings.append("\n" + getString(R.string.toppings_blackolives))
 
-            val intent = Intent(this@PizzaToppingActivity, CheckoutActivity::class.java)
-            startActivity(intent)
-
-
-        }
+        order?.toppings = toppings.toString()
+        intent.putExtra("pizzaOrder", order)
+        val intent = Intent(this@PizzaToppingActivity, CheckoutActivity::class.java)
+        startActivity(intent)
     }
 }

@@ -18,64 +18,64 @@
         android:text="@string/please_proceed_to_checkout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox5"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxBlackOlives"
         app:layout_constraintVertical_bias="1.0" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/checkBoxCheese"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="94dp"
         android:layout_marginTop="130dp"
-        android:text="CheckBox"
+        android:text="@string/toppings_cheese"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Cheese" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/checkBoxGreenPepper"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="94dp"
         android:layout_marginTop="44dp"
         android:text="CheckBox"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox"
-        tools:text="Green Pepper" />
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxCheese"
+        tools:text="@string/toppings_greenpepper" />
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/checkBoxSmokedHam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="94dp"
         android:layout_marginTop="44dp"
         android:text="CheckBox"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox2"
-        tools:text="Smoked Ham" />
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxGreenPepper"
+        tools:text="@string/toppings_smokedham" />
 
     <CheckBox
-        android:id="@+id/checkBox4"
+        android:id="@+id/checkBoxSpinach"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="94dp"
         android:layout_marginTop="44dp"
         android:text="CheckBox"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox3"
-        tools:text="Spinach" />
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxSmokedHam"
+        tools:text="@string/toppings_spinach" />
 
     <CheckBox
-        android:id="@+id/checkBox5"
+        android:id="@+id/checkBoxBlackOlives"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="94dp"
         android:layout_marginTop="44dp"
         android:text="CheckBox"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox4"
-        tools:text="Black Olives" />
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxSpinach"
+        tools:text="@string/toppings_blackolives" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

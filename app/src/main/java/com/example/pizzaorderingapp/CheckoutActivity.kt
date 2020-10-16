@@ -5,19 +5,25 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_checkout.*
+import org.w3c.dom.Text
 
 class CheckoutActivity : AppCompatActivity() {
+    var order:Order? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_checkout)
-        val order = intent.extras?.get("pizzaOrder") as Order
+        order = intent.extras?.get("pizzaOrder") as Order
 
         val textView = findViewById<TextView>(R.id.textView8)
-        textView.text = order.pizzaType
+        textView.text = order?.pizzaType
 
         val textView1 = findViewById<TextView>(R.id.textView9)
-        textView1.text = order.pizzaSize
+        textView1.text = order?.pizzaSize
 
+        val textViewToppings = findViewById<TextView>(R.id.textViewToppings)
+        textViewToppings.text = order?.toppings
 
         // val intent = intent
        // val message = intent.getStringExtra("PizzaMenueType")
