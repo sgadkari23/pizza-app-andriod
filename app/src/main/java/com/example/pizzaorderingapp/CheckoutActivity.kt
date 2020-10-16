@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
-import kotlinx.android.synthetic.main.activity_checkout.*
-import org.w3c.dom.Text
 
 class CheckoutActivity : AppCompatActivity() {
     var order:Order? = null
@@ -16,37 +14,25 @@ class CheckoutActivity : AppCompatActivity() {
         setContentView(R.layout.activity_checkout)
         order = intent.extras?.get("pizzaOrder") as Order
 
-        val textView = findViewById<TextView>(R.id.textView8)
+        val textView = findViewById<TextView>(R.id.textViewPizzaType)
         textView.text = order?.pizzaType
 
-        val textView1 = findViewById<TextView>(R.id.textView9)
+        val textView1 = findViewById<TextView>(R.id.textViewPizzaSize)
         textView1.text = order?.pizzaSize
 
-        val textViewToppings = findViewById<TextView>(R.id.textViewToppings)
+        val textViewToppings = findViewById<TextView>(R.id.textViewPizzaToppings)
         textViewToppings.text = order?.toppings
-
-        // val intent = intent
-       // val message = intent.getStringExtra("PizzaMenueType")
-       /* val textView = findViewById<TextView>(R.id.textView8)
-
-        textView.text = intent.getStringExtra("PizzaMenueType") --- supriya */
-
-       /* val textView1 = findViewById<TextView>(R.id.textView9)
-        textView.text = message
-
-        val textView3 = findViewById<TextView>(R.id.textView8)
-        textView.text = message*/
-
     }
 
     // Method to handle show button on click
-    /*fun handleOnConfirmButtonClick(v: View) {
+    fun handleOnConfirmButtonClick(v: View) {
         if (v.id == R.id.btnConfirmation) {
 
-            val intent = Intent(this@CheckoutActivity, OrderDetailActivity::class.java)
+            //val intent = Intent(this@CheckoutActivity, OrderDetailActivity::class.java)
+            val intent = Intent(this@CheckoutActivity, MainActivity::class.java)
             startActivity(intent)
 
 
         }
-    } */
+    }
 }

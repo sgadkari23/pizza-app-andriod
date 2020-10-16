@@ -32,7 +32,7 @@ class PizzaSizeActivity : AppCompatActivity() {
         if (v.id == R.id.btnChooseToppings) {
 
 
-            val intent = Intent(this@PizzaSizeActivity, CheckoutActivity::class.java)
+            val intent = Intent(this@PizzaSizeActivity, PizzaToppingActivity::class.java)
             val radio: RadioButton = findViewById(radioGroup.checkedRadioButtonId)
             order?.pizzaSize = radio.text.toString()
             intent.putExtra("pizzaOrder", order)

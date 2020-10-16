@@ -28,20 +28,24 @@ class PizzaToppingActivity : AppCompatActivity() {
 
     // Method to handle show button on click
     fun handleOnCheckoutButtonClick(v: View) {
-        if (checkBoxCheese.isChecked)
-            toppings.append("\n" + getString(R.string.toppings_cheese))
-        if (checkBoxGreenPepper.isChecked)
-            toppings.append("\n" + getString(R.string.toppings_greenpepper))
-        if (checkBoxSmokedHam.isChecked)
-            toppings.append("\n" + getString(R.string.toppings_smokedham))
-        if (checkBoxSpinach.isChecked)
-            toppings.append("\n" + getString(R.string.toppings_spinach))
-        if (checkBoxBlackOlives.isChecked)
-            toppings.append("\n" + getString(R.string.toppings_blackolives))
-
+        if (checkBoxCheese.isChecked) {
+            toppings.append(getString(R.string.toppings_cheese)+"\n")
+        }
+        if (checkBoxGreenPepper.isChecked) {
+            toppings.append(getString(R.string.toppings_greenpepper)+"\n")
+        }
+        if (checkBoxSmokedHam.isChecked) {
+            toppings.append(getString(R.string.toppings_smokedham)+"\n")
+        }
+        if (checkBoxSpinach.isChecked) {
+            toppings.append(getString(R.string.toppings_spinach)+"\n")
+        }
+        if (checkBoxBlackOlives.isChecked) {
+            toppings.append(getString(R.string.toppings_blackolives)+"\n")
+        }
         order?.toppings = toppings.toString()
-        intent.putExtra("pizzaOrder", order)
         val intent = Intent(this@PizzaToppingActivity, CheckoutActivity::class.java)
+        intent.putExtra("pizzaOrder", order)
         startActivity(intent)
     }
 }
