@@ -21,4 +21,9 @@
     <string name="toppings_smokedham">Smoked Ham</string>
     <string name="toppings_spinach">Spinach</string>
     <string name="toppings_blackolives">Black Olives</string>
+    <string-array name="payment_cardtype">
+        <item>Visa</item>
+        <item>Master</item>
+        <item>Mestro</item>
+    </string-array>
 </resources>

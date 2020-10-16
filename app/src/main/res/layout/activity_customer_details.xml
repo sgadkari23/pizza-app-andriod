@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".customer_details">
+    tools:context=".CustomerDetails">
 
     <TextView
         android:id="@+id/textViewFullName"
@@ -13,12 +13,11 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="101dp"
         android:fontFamily="@font/andada"
-        android:text="TextView"
+        android:text="Full Name:"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Full Name:" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView8"
@@ -27,7 +26,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="45dp"
         android:fontFamily="@font/andada"
-        android:text="TextView"
+        android:text="Mobile No:"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +40,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="45dp"
         android:fontFamily="@font/andada"
-        android:text="TextView"
+        android:text="PostalCode:"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +54,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="45dp"
         android:fontFamily="@font/andada"
-        android:text="TextView"
+        android:text="CardDetail:"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +68,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="45dp"
         android:fontFamily="@font/andada"
-        android:text="TextView"
+        android:text="Address"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,8 +118,8 @@
         android:id="@+id/editTextNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:fontFamily="@font/andada"
         android:inputType="number"
@@ -132,8 +131,8 @@
         android:id="@+id/editTextTextMultiLine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:fontFamily="@font/andada"
         android:gravity="start|top"
@@ -142,13 +141,36 @@
         app:layout_constraintStart_toEndOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
 
-    <Button
-        android:id="@+id/button"
+    <TextView
+        android:id="@+id/textViewCardType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="180dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/andada"
+        android:text="CardType"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <Spinner
+        android:id="@+id/spinnerCardtype"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toEndOf="@+id/textViewCardType"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginEnd="171dp"
+        android:layout_marginBottom="136dp"
+        android:onClick="onclickOnCustomerdetailsButtonClick"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

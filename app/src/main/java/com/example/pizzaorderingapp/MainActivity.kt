@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-         val order = Order()
+        val order = Order()
 
         when(item.itemId){
             meatSupreme ->{
