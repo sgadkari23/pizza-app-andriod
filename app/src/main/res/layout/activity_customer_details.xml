@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textViewMobileNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -34,7 +34,7 @@
         tools:text="Mobile No:" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textViewPostalCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -44,25 +44,25 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMobileNo"
         tools:text="PostalCode:" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textViewCardNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="45dp"
         android:fontFamily="@font/andada"
-        android:text="CardDetail:"
+        android:text="Card No:"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
-        tools:text="CardDetail:" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewPostalCode"
+        tools:text="Card No:" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/textViewAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -72,7 +72,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCardNo"
         tools:text="Address" />
 
     <EditText
@@ -98,7 +98,7 @@
         android:fontFamily="@font/andada"
         android:inputType="phone"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintStart_toEndOf="@+id/textViewMobileNo"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
     <EditText
@@ -111,24 +111,24 @@
         android:fontFamily="@font/andada"
         android:inputType="textPostalAddress"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintStart_toEndOf="@+id/textViewPostalCode"
         app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/editTextNumberCardCardno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:fontFamily="@font/andada"
         android:inputType="number"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintStart_toEndOf="@+id/textViewCardNo"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPostalAddress" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/editTextTextMultiLineAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
@@ -138,8 +138,8 @@
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+        app:layout_constraintStart_toEndOf="@+id/textViewAddress"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberCardCardno" />
 
     <TextView
         android:id="@+id/textViewCardType"
@@ -152,16 +152,17 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewAddress" />
 
     <Spinner
         android:id="@+id/spinnerCardtype"
-        android:layout_width="80dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="36dp"
+        android:entries="@array/payment_cardtype"
         app:layout_constraintStart_toEndOf="@+id/textViewCardType"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLineAddress" />
 
     <Button
         android:id="@+id/buttonNext"
@@ -169,11 +170,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="152dp"
         android:layout_marginEnd="171dp"
-        android:layout_marginBottom="136dp"
+        android:layout_marginBottom="168dp"
         android:onClick="onclickOnCustomerdetailsButtonClick"
-        android:text="Button"
+        android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,6 +13,7 @@ class CheckoutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_checkout)
+
         order = intent.extras?.get("pizzaOrder") as Order
         personalInformation = intent.extras?.get("customerInfo") as PersonalInformation
 
@@ -35,12 +36,8 @@ class CheckoutActivity : AppCompatActivity() {
     // Method to handle show button on click
     fun handleOnConfirmButtonClick(v: View) {
         if (v.id == R.id.btnConfirmation) {
-
-            //val intent = Intent(this@CheckoutActivity, CustomerDetails::class.java)
            val intent = Intent(this@CheckoutActivity, MainActivity::class.java)
             startActivity(intent)
-
-
         }
     }
 }

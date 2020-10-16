@@ -45,7 +45,6 @@ class PizzaToppingActivity : AppCompatActivity() {
         }
         order?.toppings = toppings.toString()
         val intent = Intent(this@PizzaToppingActivity, CustomerDetails::class.java)
-        // val intent = Intent(this@PizzaToppingActivity, CheckoutActivity::class.java)
         intent.putExtra("pizzaOrder", order)
         startActivity(intent)
     }
