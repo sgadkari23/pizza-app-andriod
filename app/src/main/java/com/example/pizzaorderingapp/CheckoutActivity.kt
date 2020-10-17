@@ -15,9 +15,11 @@ class CheckoutActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_checkout)
 
+        // Extract order and personal information data from intent object
         order = intent.extras?.get("pizzaOrder") as Order
         personalInformation = intent.extras?.get("customerInfo") as PersonalInformation
 
+        // Display name, address, type, size and toppings on screen
         val customerfullName = findViewById<TextView>(R.id.textViewCustomerName)
         customerfullName.text = personalInformation?.fullName
 
@@ -37,7 +39,7 @@ class CheckoutActivity : AppCompatActivity() {
     // Method to handle show button on click
     fun handleOnConfirmButtonClick(v: View) {
         if (v.id == R.id.btnConfirmation) {
-            Toast.makeText(this, "Your has been placed", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Thank you for ordering. Your has been placed", Toast.LENGTH_LONG).show()
             val intent = Intent(this@CheckoutActivity, MainActivity::class.java)
             startActivity(intent)
         }

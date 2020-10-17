@@ -10,8 +10,8 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="92dp"
         android:fontFamily="cursive"
         android:shadowColor="#FFFFFF"
         android:text="Welcome to Pizza House !"
@@ -19,6 +19,21 @@
         android:textSize="38sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:fontFamily="cursive"
+        android:shadowColor="#FFFFFF"
+        android:text="Select Pizza from Context Menu"
+        android:textColor="#646981"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView

@@ -15,16 +15,20 @@ class PizzaSizeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pizza_size)
+
+        // Extract intent passed from previous activity
         order = intent.extras?.get("pizzaOrder") as Order
+
         radioGroup.setOnCheckedChangeListener(
             RadioGroup.OnCheckedChangeListener { group, checkedId ->
                 val radio: RadioButton = findViewById(checkedId)
             })
     }
 
-    // Method to handle show button on click
+    // Method to handle next button on click
     fun handleOnChooseToppingButtonClick(v: View) {
         if (v.id == R.id.btnChooseToppings) {
+            // Call pizza toppings activity with order object
             val intent = Intent(this@PizzaSizeActivity, PizzaToppingActivity::class.java)
             val radio: RadioButton = findViewById(radioGroup.checkedRadioButtonId)
             order?.pizzaSize = radio.text.toString()

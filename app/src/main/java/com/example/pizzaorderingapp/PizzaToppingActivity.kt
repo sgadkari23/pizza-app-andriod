@@ -8,12 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 
 class PizzaToppingActivity : AppCompatActivity() {
     var order:Order? = null
+
     lateinit var checkBoxCheese: CheckBox
     lateinit var checkBoxGreenPepper: CheckBox
     lateinit var checkBoxSmokedHam: CheckBox
     lateinit var checkBoxSpinach: CheckBox
     lateinit var checkBoxBlackOlives: CheckBox
-    val toppings = StringBuilder()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +28,9 @@ class PizzaToppingActivity : AppCompatActivity() {
 
     // Method to handle show button on click
     fun handleOnCheckoutButtonClick(v: View) {
+        // Create toppings string using stringbuilder
+        val toppings = StringBuilder()
+
         if (checkBoxCheese.isChecked) {
             toppings.append(getString(R.string.toppings_cheese)+"\n")
         }
@@ -44,6 +47,8 @@ class PizzaToppingActivity : AppCompatActivity() {
             toppings.append(getString(R.string.toppings_blackolives)+"\n")
         }
         order?.toppings = toppings.toString()
+
+        // Call customer details activity
         val intent = Intent(this@PizzaToppingActivity, CustomerDetails::class.java)
         intent.putExtra("pizzaOrder", order)
         startActivity(intent)
