@@ -39,7 +39,7 @@ class CheckoutActivity : AppCompatActivity() {
     // Method to handle show button on click
     fun handleOnConfirmButtonClick(v: View) {
         if (v.id == R.id.btnConfirmation) {
-            Toast.makeText(this, "Thank you for ordering. Your has been placed", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Thank you for ordering. Your order has been placed", Toast.LENGTH_LONG).show()
             val intent = Intent(this@CheckoutActivity, MainActivity::class.java)
             startActivity(intent)
         }
