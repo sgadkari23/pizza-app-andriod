@@ -14,6 +14,9 @@ class CustomerDetails : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_details)
         order = intent.extras?.get("pizzaOrder") as Order
+
+
+
         val paymentcardtype = resources.getStringArray(R.array.payment_cardtype)
         val spinnerCardtype = findViewById<Spinner>(R.id.spinnerCardtype)
         if (spinnerCardtype != null) {
@@ -35,12 +38,26 @@ class CustomerDetails : AppCompatActivity() {
     fun onclickOnCustomerdetailsButtonClick(v: View) {
         println("onclick function clicked")
         if (v.id == R.id.buttonNext) {
-            personalInformation.fullName = findViewById<TextView>(R.id.editTextTextPersonName).text.toString()
-            personalInformation.address = findViewById<TextView>(R.id.editTextTextAddress).text.toString()
-            val intent = Intent(this@CustomerDetails, CheckoutActivity::class.java)
-            intent.putExtra("pizzaOrder", order)
-            intent.putExtra("customerInfo", personalInformation)
-            startActivity(intent)
+            var errorflag:Boolean = false
+            val phoneNo = findViewById<TextView>(R.id.spinnerCardtype).toString()
+            if(phoneNo.length !=10){
+                errorflag = true
+            }
+            if(errorflag){
+                Toast.makeText(this, "Please enter valid details", Toast.LENGTH_SHORT).show()
+            }
+            if(!errorflag) {
+
+                personalInformation.fullName =
+                    findViewById<TextView>(R.id.editTextTextPersonName).text.toString()
+                personalInformation.address =
+                    findViewById<TextView>(R.id.editTextTextAddress).text.toString()
+                personalInformation.mobileNo =phoneNo.toInt()
+                val intent = Intent(this@CustomerDetails, CheckoutActivity::class.java)
+                intent.putExtra("pizzaOrder", order)
+                intent.putExtra("customerInfo", personalInformation)
+                startActivity(intent)
+            }
         }
     }
 }

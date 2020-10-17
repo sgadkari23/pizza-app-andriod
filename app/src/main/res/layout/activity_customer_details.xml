@@ -98,6 +98,7 @@
         android:fontFamily="casual"
         android:inputType="phone"
         android:maxLength="10"
+        android:maxLines="0"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/textViewMobileNo"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
@@ -159,7 +160,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="152dp"
         android:layout_marginEnd="171dp"
-        android:layout_marginBottom="90dp"
+        android:layout_marginBottom="50dp"
         android:background="@color/colorPrimary"
         android:fontFamily="casual"
         android:onClick="onclickOnCustomerdetailsButtonClick"
@@ -197,5 +198,34 @@
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/textViewAddress"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumberCardCardno" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="29dp"
+        android:ems="10"
+        android:fontFamily="casual"
+        android:hint="MM/YY"
+        android:inputType="date"
+        android:maxLength="5"
+        android:maxLines="1"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCardtype" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="36dp"
+        android:fontFamily="casual"
+        android:text="CardExpiry"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCardType" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,13 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CustomerDetails">
+        <activity
+            android:name=".CustomerDetails"
+            android:parentActivityName=".MainActivity">
 
         </activity>
         <activity android:name=".SplashScreenActivity" />
         <activity
             android:name=".OrderDetailActivity"
-            android:parentActivityName=".CheckoutActivity">
+            android:parentActivityName=".MainActivity">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
@@ -24,16 +26,16 @@
         </activity>
         <activity
             android:name=".CheckoutActivity"
-            android:parentActivityName=".PizzaToppingActivity">
+            android:parentActivityName=".MainActivity">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".PizzaToppingActivity" />
+                android:value=".CustomerDetails" />
         </activity>
         <activity
             android:name=".PizzaToppingActivity"
-            android:parentActivityName=".PizzaSizeActivity">
+            android:parentActivityName=".MainActivity">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
