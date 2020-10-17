@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 
 class CheckoutActivity : AppCompatActivity() {
     var order:Order? = null
@@ -36,7 +37,8 @@ class CheckoutActivity : AppCompatActivity() {
     // Method to handle show button on click
     fun handleOnConfirmButtonClick(v: View) {
         if (v.id == R.id.btnConfirmation) {
-           val intent = Intent(this@CheckoutActivity, MainActivity::class.java)
+            Toast.makeText(this, "Your has been placed", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this@CheckoutActivity, MainActivity::class.java)
             startActivity(intent)
         }
     }

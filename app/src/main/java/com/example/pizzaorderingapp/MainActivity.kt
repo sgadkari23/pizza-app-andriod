@@ -26,14 +26,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, PizzaSizeActivity::class.java)
                 order.pizzaType = getString(R.string.meat_supreme)
                 intent.putExtra("pizzaOrder", order)
-                Toast.makeText(this, "You clicked Meat Supreme", Toast.LENGTH_LONG).show()
                 startActivity(intent)
             }
             R.id.superHawaiian ->{
                 val intent = Intent(this@MainActivity, PizzaSizeActivity::class.java)
                 order.pizzaType = getString(R.string.super_hawaiian)
                 intent.putExtra("pizzaOrder", order)
-                Toast.makeText(this, "You clicked Super Hawaiian", Toast.LENGTH_LONG).show()
                 startActivity(intent)
             }
             R.id.veggie ->{
@@ -41,21 +39,18 @@ class MainActivity : AppCompatActivity() {
                 order.pizzaType = getString(R.string.veggie)
                 intent.putExtra("pizzaOrder", order)
                 startActivity(intent)
-                Toast.makeText(this, "You clicked Veggie", Toast.LENGTH_LONG).show()
             }
             R.id.mediterranean ->{
                 val intent = Intent(this@MainActivity, PizzaSizeActivity::class.java)
                 order.pizzaType = getString(R.string.mediterranean)
                 intent.putExtra("pizzaOrder", order)
                 startActivity(intent)
-                Toast.makeText(this, "You clicked Mediterranean", Toast.LENGTH_LONG).show()
             }
             R.id.cheddarSupreme ->{
                 val intent = Intent(this@MainActivity, PizzaSizeActivity::class.java)
                 order.pizzaType = getString(R.string.cheddar_supreme)
                 intent.putExtra("pizzaOrder", order)
                 startActivity(intent)
-                Toast.makeText(this, "You clicked Cheddar Supreme", Toast.LENGTH_LONG).show()
             }
         }
         return true

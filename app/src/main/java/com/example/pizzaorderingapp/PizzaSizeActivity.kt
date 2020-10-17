@@ -29,7 +29,6 @@ class PizzaSizeActivity : AppCompatActivity() {
             val radio: RadioButton = findViewById(radioGroup.checkedRadioButtonId)
             order?.pizzaSize = radio.text.toString()
             intent.putExtra("pizzaOrder", order)
-            //Toast.makeText(applicationContext,"On click : ${radio.text}",Toast.LENGTH_SHORT).show()
             startActivity(intent)
         }
     }

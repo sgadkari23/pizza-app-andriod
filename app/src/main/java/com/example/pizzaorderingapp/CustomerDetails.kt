@@ -23,26 +23,23 @@ class CustomerDetails : AppCompatActivity() {
             val adapter = ArrayAdapter(this,
                 android.R.layout.simple_spinner_item, paymentcardtype)
             spinnerCardtype.adapter = adapter
-
             spinnerCardtype.onItemSelectedListener = object :
-                    AdapterView.OnItemSelectedListener {
-                    override fun onItemSelected(parent: AdapterView<*>,
-                                                view: View, position: Int, id: Long) {
-                        personalInformation.cardType = paymentcardtype[position]
-                    }
-                    override fun onNothingSelected(parent: AdapterView<*>) {
-                    }
+                AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(parent: AdapterView<*>,
+                                            view: View, position: Int, id: Long) {
+                    personalInformation.cardType = paymentcardtype[position]
                 }
-
+                override fun onNothingSelected(parent: AdapterView<*>) {
+                }
             }
+        }
     }
 
     fun onclickOnCustomerdetailsButtonClick(v: View) {
         println("onclick function clicked")
         if (v.id == R.id.buttonNext) {
             personalInformation.fullName = findViewById<TextView>(R.id.editTextTextPersonName).text.toString()
-            personalInformation.address = findViewById<TextView>(R.id.editTextTextMultiLineAddress).text.toString()
-            
+            personalInformation.address = findViewById<TextView>(R.id.editTextTextAddress).text.toString()
             val intent = Intent(this@CustomerDetails, CheckoutActivity::class.java)
             intent.putExtra("pizzaOrder", order)
             intent.putExtra("customerInfo", personalInformation)
