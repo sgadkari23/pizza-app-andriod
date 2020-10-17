@@ -13,12 +13,9 @@ class CustomerDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_details)
-
         order = intent.extras?.get("pizzaOrder") as Order
-
         val paymentcardtype = resources.getStringArray(R.array.payment_cardtype)
         val spinnerCardtype = findViewById<Spinner>(R.id.spinnerCardtype)
-
         if (spinnerCardtype != null) {
             val adapter = ArrayAdapter(this,
                 android.R.layout.simple_spinner_item, paymentcardtype)

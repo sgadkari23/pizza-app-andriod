@@ -18,20 +18,20 @@ class CheckoutActivity : AppCompatActivity() {
         order = intent.extras?.get("pizzaOrder") as Order
         personalInformation = intent.extras?.get("customerInfo") as PersonalInformation
 
-        val fullName = findViewById<TextView>(R.id.textViewCustomerName)
-        fullName.text = personalInformation?.fullName
+        val customerfullName = findViewById<TextView>(R.id.textViewCustomerName)
+        customerfullName.text = personalInformation?.fullName
 
-        val address = findViewById<TextView>(R.id.textViewCustomerAddress)
-        address.text = personalInformation?.address
+        val customerAddress = findViewById<TextView>(R.id.textViewCustomerAddress)
+        customerAddress.text = personalInformation?.address
 
-        val textView = findViewById<TextView>(R.id.textViewPizzaType)
-        textView.text = order?.pizzaType
+        val pizzaType = findViewById<TextView>(R.id.textViewPizzaType)
+        pizzaType.text = order?.pizzaType
 
-        val textView1 = findViewById<TextView>(R.id.textViewPizzaSize)
-        textView1.text = order?.pizzaSize
+        val pizzaSize = findViewById<TextView>(R.id.textViewPizzaSize)
+        pizzaSize.text = order?.pizzaSize
 
-        val textViewToppings = findViewById<TextView>(R.id.textViewPizzaToppings)
-        textViewToppings.text = order?.toppings
+        val pizzaToppings = findViewById<TextView>(R.id.textViewPizzaToppings)
+        pizzaToppings.text = order?.toppings
     }
 
     // Method to handle show button on click
