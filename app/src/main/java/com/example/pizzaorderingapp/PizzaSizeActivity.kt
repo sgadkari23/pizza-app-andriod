@@ -16,9 +16,10 @@ class PizzaSizeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pizza_size)
 
-        // Extract intent passed from previous activity
+        // Extract intent data passed from previous activity
         order = intent.extras?.get("pizzaOrder") as Order
 
+        // Populate pizza size
         radioGroup.setOnCheckedChangeListener(
             RadioGroup.OnCheckedChangeListener { group, checkedId ->
                 val radio: RadioButton = findViewById(checkedId)

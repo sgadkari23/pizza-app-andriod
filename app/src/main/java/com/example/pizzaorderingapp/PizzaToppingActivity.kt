@@ -18,7 +18,9 @@ class PizzaToppingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pizza_topping)
+        // extract intent data
         order = intent.extras?.get("pizzaOrder") as Order
+        // initialize checkbox
         checkBoxCheese = findViewById(R.id.checkBoxCheese)
         checkBoxGreenPepper = findViewById(R.id.checkBoxGreenPepper)
         checkBoxSmokedHam = findViewById(R.id.checkBoxSmokedHam)
@@ -26,7 +28,7 @@ class PizzaToppingActivity : AppCompatActivity() {
         checkBoxBlackOlives = findViewById(R.id.checkBoxBlackOlives)
     }
 
-    // Method to handle show button on click
+    // Method to handle next button on click
     fun handleOnCheckoutButtonClick(v: View) {
         // Create toppings string using stringbuilder
         val toppings = StringBuilder()
@@ -46,6 +48,7 @@ class PizzaToppingActivity : AppCompatActivity() {
         if (checkBoxBlackOlives.isChecked) {
             toppings.append(getString(R.string.toppings_blackolives)+"\n")
         }
+
         order?.toppings = toppings.toString()
 
         // Call customer details activity
