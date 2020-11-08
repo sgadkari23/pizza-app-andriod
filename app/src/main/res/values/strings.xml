@@ -22,10 +22,24 @@
     <string name="toppings_spinach">Spinach</string>
     <string name="toppings_blackolives">Black Olives</string>
     <string name="btn_next">Next</string>
+    <string name="hyperlink">Click here to check our stores</string>
     <string name="tv_full_name">Full Name:</string>
+    <string name="store_locations">Store Locations</string>
+    <string name="smap">Stores in your location</string>
+    <string-array name="cities_name">
+        <item>Austin</item>
+        <item>Dallas</item>
+        <item>San Antonio</item>
+        <item>Boston</item>
+        <item>Houston</item>
+    </string-array>
     <string-array name="payment_cardtype">
         <item>Visa</item>
         <item>Master</item>
         <item>Mestro</item>
     </string-array>
+    <string name="title_activity_pizza_stores">Map</string>
+    <string name="title_activity_pizza_stores_map">Map</string>
+    <string name="map_type_default">Standard View</string>
+    <string name="map_type_satellite">Satellite View</string>
 </resources>

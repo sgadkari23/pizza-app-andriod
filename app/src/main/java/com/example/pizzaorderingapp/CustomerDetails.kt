@@ -1,5 +1,10 @@
 package com.example.pizzaorderingapp
-
+/*
+* Application Name: Pizza App
+* Name : Supriya Gadkari & Raj Shahu
+* Group No: 3
+* Description: Customer performation form
+* */
 import android.content.Intent
 import android.os.Bundle
 import android.view.View

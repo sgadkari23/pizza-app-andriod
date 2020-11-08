@@ -1,5 +1,10 @@
 package com.example.pizzaorderingapp
-
+/*
+* Application Name: Pizza App
+* Name : Supriya Gadkari & Raj Shahu
+* Group No: 3
+* Description: Pizza size selection screen
+* */
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
