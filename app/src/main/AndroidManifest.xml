@@ -32,10 +32,8 @@
         <activity
             android:name=".PizzaStoresMapActivity"
             android:label="@string/smap"
-            android:parentActivityName=".MainActivity" >
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".CustomerDetails" />
+            android:parentActivityName=".PizzaStoreCitiesActivity" >
+
         </activity>
         <activity android:name=".PizzaStoreCitiesActivity"
             android:label="@string/store_locations"

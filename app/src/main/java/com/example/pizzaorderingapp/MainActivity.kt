@@ -18,20 +18,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
             val clickableText = findViewById(R.id.pizzaStoresTextView) as TextView
         clickableText.setOnClickListener {
-            // your code to perform when the user clicks on the TextView
-            //Toast.makeText(this@MainActivity, "You clicked on TextView 'Click Me'.", Toast.LENGTH_SHORT).show()
-           // val intent = Intent(this@MainActivity, PizzaStoresActivity::class.java) GoogleMaps
             val intent = Intent(this@MainActivity, PizzaStoreCitiesActivity::class.java)
             startActivity(intent)
 
         }
-        // Initialize the SDK
-        //Places.initialize(applicationContext, "AIzaSyBsB5J1cPKtF9IwE1x7ZcbkfV1K-jbxPJE")
-
-        // Create a new PlacesClient instance
-        //val placesClient = Places.createClient(this)
-        //placesClient.fetchPlace()
-        //textView.movementMethod = LinkMovementMethod.getInstance()
     }
 
     // Populate context menu

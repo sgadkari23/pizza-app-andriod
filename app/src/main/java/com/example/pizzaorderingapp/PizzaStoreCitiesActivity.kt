@@ -17,7 +17,6 @@ import kotlinx.android.synthetic.main.activity_pizza_store_cities.*
 
 class PizzaStoreCitiesActivity : AppCompatActivity() {
 
-    //var array = arrayOf<String>("Melbourne", "Vienna", "Vancouver", "Toronto", "Calgary", "Adelaide", "Perth", "Auckland")
     lateinit var citySelected : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +27,6 @@ class PizzaStoreCitiesActivity : AppCompatActivity() {
         var arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, cityArray )
         storeCitiesListView.adapter = arrayAdapter
         storeCitiesListView.setOnItemClickListener { parent, View, position, id ->
-            //Toast.makeText(this,cityArray[position],Toast.LENGTH_LONG).show()
             citySelected = cityArray[position]
             val intent = Intent(this@PizzaStoreCitiesActivity, PizzaStoresMapActivity::class.java)
             intent.putExtra("storeCity", citySelected)

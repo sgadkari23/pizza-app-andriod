@@ -25,8 +25,6 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.libraries.places.api.Places
 import com.google.android.libraries.places.api.model.OpeningHours
 import com.google.android.libraries.places.api.model.Place
-import com.google.android.libraries.places.api.net.FetchPhotoRequest
-import com.google.android.libraries.places.api.net.FetchPhotoResponse
 import com.google.android.libraries.places.api.net.FetchPlaceRequest
 import com.google.android.libraries.places.api.net.FetchPlaceResponse
 import kotlinx.android.synthetic.main.activity_main.*
@@ -57,20 +55,27 @@ class PizzaStoresMapActivity : AppCompatActivity(), OnMapReadyCallback {
             R.id.satellite -> {
                 mMap.mapType = GoogleMap.MAP_TYPE_SATELLITE
             }
+            android.R.id.home ->{
+                onBackPressed()
+                return true
+            }
         }
         return true
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
+        // setting infowindow when clicked om marker
         mMap.setInfoWindowAdapter(CustomInfoWindowForGoogleMap(this))
         val citySelected:String = intent.extras!!.get("storeCity") as String
 
         // Initialize the SDK
-        Places.initialize(applicationContext, "AIzaSyBsB5J1cPKtF9IwE1x7ZcbkfV1K-jbxPJE")
+        Places.initialize(applicationContext, getString(R.string.google_maps_key))
 
         // Create a new PlacesClient instance
         val placesClient = Places.createClient(this)
+
+        // Data thats to returned from places API
         val placeFields = listOf<Place.Field>(
             Place.Field.ADDRESS,
             Place.Field.LAT_LNG,
@@ -80,31 +85,31 @@ class PizzaStoresMapActivity : AppCompatActivity(), OnMapReadyCallback {
             Place.Field.WEBSITE_URI
         )
 
-        // for loop for austin
+        // for loop for cities
         val cities = Cities()
-        val austin = cities.getCity(citySelected)
-        if (austin != null) {
+        // access city from hashmap
+        val city = cities.getCity(citySelected)
+        if (city != null) {
             // set camera position
-           // mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(austin.latLngBounds, 0))
-            for(pizzaStoreId:String in austin.pizzaStoreIds)
+            for(pizzaStoreId:String in city.pizzaStoreIds)
             {
                 val zoomLevel = 11.0f
+                // request to place api
                 val request = FetchPlaceRequest.newInstance(pizzaStoreId, placeFields)
                 placesClient.fetchPlace(request)
                     .addOnSuccessListener { response: FetchPlaceResponse ->
                         val place = response.place
                         val position: LatLng = place.latLng!!
-
+                        // add marker
                         val m = mMap.addMarker(MarkerOptions()
                             .position(position)
                             .title(place.name)
                             .snippet("Rating: " + place.rating)
                             .icon(BitmapDescriptorFactory.defaultMarker( BitmapDescriptorFactory.HUE_ORANGE)))
-
+                        // Send data to infoWindow
                         m.tag = InfoWindowData(place.name, place.address, place.rating, place.userRatingsTotal, place.openingHours)
                         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(position,zoomLevel))
-
-                    }.addOnFailureListener { exception: Exception ->
+                        }.addOnFailureListener { exception: Exception ->
                         if (exception is ApiException) {
                             val statusCode = exception.statusCode
                             TODO("Handle error with given status code")
@@ -120,22 +125,19 @@ class CustomInfoWindowForGoogleMap : GoogleMap.InfoWindowAdapter {
     constructor(context: Context){
         mContext = context
     }
-
+    //inflating infoWindow
     override fun getInfoContents(marker: Marker): View {
         var mWindow = (mContext as Activity).layoutInflater.inflate(R.layout.map_marker_info_window, null)
         val title = mWindow.findViewById<TextView>(R.id.info_window_title)
+        // accesssing the data passed  from marker 
         val infoWindowData:InfoWindowData = marker.tag as InfoWindowData
         title.text = infoWindowData.title
 
         val rating= mWindow.findViewById<TextView>(R.id.info_window_rating)
         rating.text = "Rating: "+infoWindowData.rating.toString()+" ("+infoWindowData.ratingsTotal+")"
 
-        //val openingHours= mWindow.findViewById<TextView>(R.id.info_window_openingHours)
-       // openingHours.text = "Rating: "+infoWindowData.openingHours.toString()
-
         val address= mWindow.findViewById<TextView>(R.id.info_window_address)
         address.text = infoWindowData.address
-        //val weekDayText = this.openingHours?.weekdayText
         return mWindow
     }
 
