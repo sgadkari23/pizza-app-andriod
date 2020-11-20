@@ -75,14 +75,13 @@ class PizzaStoresMapActivity : AppCompatActivity(), OnMapReadyCallback {
         // Create a new PlacesClient instance
         val placesClient = Places.createClient(this)
 
-        // Data thats to returned from places API
+        // Data that to returned from places API
         val placeFields = listOf<Place.Field>(
             Place.Field.ADDRESS,
             Place.Field.LAT_LNG,
             Place.Field.NAME,
             Place.Field.RATING,
-            Place.Field.USER_RATINGS_TOTAL,
-            Place.Field.WEBSITE_URI
+            Place.Field.USER_RATINGS_TOTAL
         )
 
         // for loop for cities
@@ -90,9 +89,9 @@ class PizzaStoresMapActivity : AppCompatActivity(), OnMapReadyCallback {
         // access city from hashmap
         val city = cities.getCity(citySelected)
         if (city != null) {
-            // set camera position
+
             for(pizzaStoreId:String in city.pizzaStoreIds)
-            {
+            {   // set camera
                 val zoomLevel = 11.0f
                 // request to place api
                 val request = FetchPlaceRequest.newInstance(pizzaStoreId, placeFields)
@@ -129,7 +128,7 @@ class CustomInfoWindowForGoogleMap : GoogleMap.InfoWindowAdapter {
     override fun getInfoContents(marker: Marker): View {
         var mWindow = (mContext as Activity).layoutInflater.inflate(R.layout.map_marker_info_window, null)
         val title = mWindow.findViewById<TextView>(R.id.info_window_title)
-        // accesssing the data passed  from marker 
+        // accesssing the data passed  from marker
         val infoWindowData:InfoWindowData = marker.tag as InfoWindowData
         title.text = infoWindowData.title
 

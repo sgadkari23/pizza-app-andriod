@@ -81,7 +81,7 @@
         android:fontFamily="casual"
         android:onClick="handleOnConfirmButtonClick"
         android:text="Place Order"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorcontexttext"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.481"

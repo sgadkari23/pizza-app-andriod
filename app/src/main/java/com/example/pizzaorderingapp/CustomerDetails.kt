@@ -5,27 +5,56 @@ package com.example.pizzaorderingapp
 * Group No: 3
 * Description: Customer performation form
 * */
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.room.Room
+import com.example.pizzaorderingapp.room.AppDatabase
+import com.example.pizzaorderingapp.viewmodel.UserViewModel
 
 class CustomerDetails : AppCompatActivity() {
+    lateinit var userViewModel: UserViewModel
+
     var order:Order? = null
     val personalInformation = PersonalInformation()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_customer_details)
-        // Extract order object from intent
-        order = intent.extras?.get("pizzaOrder") as Order
+    lateinit var fullName:EditText
+    lateinit var userName:String
 
-        // Get selected payment cardtype from dropdown/select menu
-        val paymentcardtype = resources.getStringArray(R.array.payment_cardtype)
-        val spinnerCardtype = findViewById<Spinner>(R.id.spinnerCardtype)
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+         setContentView(R.layout.activity_customer_details)
 
-        if (spinnerCardtype != null) {
+         // Extract order object from intent
+         order = intent.extras?.get("pizzaOrder") as Order
+         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+
+         fullName = findViewById<EditText>(R.id.editTextTextPersonName)
+
+         val sharedPref = this@CustomerDetails?.getSharedPreferences("LoggedInUser", Context.MODE_PRIVATE)
+
+         userName = sharedPref.getString("userName", "")!!
+         // Extract firstname and last name of logged in user
+         userViewModel.getUserDetails(this@CustomerDetails, userName)!!.observe(this, Observer {
+
+             if (it == null) {
+                 Toast.makeText(this, "Error fetching logged in user info.", Toast.LENGTH_SHORT).show()
+             }
+             else {
+                 fullName.setText(it.firstName + " " + it.lastName)
+             }
+         })
+
+         // Get selected payment cardtype from dropdown/select menu
+         val paymentcardtype = resources.getStringArray(R.array.payment_cardtype)
+         val spinnerCardtype = findViewById<Spinner>(R.id.spinnerCardtype)
+
+         if (spinnerCardtype != null) {
             val adapter = ArrayAdapter(this,
                 android.R.layout.simple_spinner_item, paymentcardtype)
             spinnerCardtype.adapter = adapter
@@ -45,7 +74,7 @@ class CustomerDetails : AppCompatActivity() {
         if (v.id == R.id.buttonNext) {
             // Validate user input
             // Full name is required
-            val fullName = findViewById<EditText>(R.id.editTextTextPersonName)
+
             if(fullName.text.isEmpty()){
                 Toast.makeText(this, "Full name is required", Toast.LENGTH_SHORT).show()
                 return
@@ -98,6 +127,7 @@ class CustomerDetails : AppCompatActivity() {
             personalInformation.postalCode = postalCode.text.toString()
             personalInformation.cardNumber = cardNo.text.toString()
             personalInformation.cardExpiry = cardExpiry.text.toString()
+            personalInformation.userName = userName
 
             // Call checkout activity with intent data
             val intent = Intent(this@CustomerDetails, CheckoutActivity::class.java)

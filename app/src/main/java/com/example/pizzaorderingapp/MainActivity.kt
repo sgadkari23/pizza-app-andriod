@@ -5,23 +5,47 @@ package com.example.pizzaorderingapp
 * Group No: 3
 * Description: Home screen of Pizza app
 * */
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
+import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import com.example.pizzaorderingapp.model.OrderEntity
+import com.example.pizzaorderingapp.viewmodel.OrderViewModel
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var orderViewModel: OrderViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-            val clickableText = findViewById(R.id.pizzaStoresTextView) as TextView
-        clickableText.setOnClickListener {
+
+        orderViewModel = ViewModelProvider(this).get(OrderViewModel::class.java)
+
+        val clickableText = findViewById(R.id.pizzaStoresTextView) as TextView
+           clickableText.setOnClickListener {
             val intent = Intent(this@MainActivity, PizzaStoreCitiesActivity::class.java)
             startActivity(intent)
-
         }
+
+        orderViewModel.getAllOrders(this@MainActivity)?.observe(this, Observer {
+
+            if (it == null) {
+                Toast.makeText(this, "Cannot find all orders!", Toast.LENGTH_LONG).show()
+            }
+            else {
+                for (order:OrderEntity in it)
+                {
+                    println("Order Status: " + order.status + " Username: " + order.userName)
+                }
+            }
+        })
     }
 
     // Populate context menu

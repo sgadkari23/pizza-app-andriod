@@ -15,4 +15,5 @@ class PersonalInformation: Serializable {
     var cardExpiry: String? =null
     var address: String? =null
     var cardType: String? =null
+    var userName: String? =null
 }

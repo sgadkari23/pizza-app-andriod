@@ -15,7 +15,7 @@
         android:fontFamily="@font/andada"
         android:onClick="handleOnChooseToppingButtonClick"
         android:text="@string/btn_next"
-        android:textColor="#ECE2E2"
+        android:textColor="@color/colorPizzaSize"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

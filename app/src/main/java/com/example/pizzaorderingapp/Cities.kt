@@ -5,8 +5,6 @@ package com.example.pizzaorderingapp
 * Group No: 3
 * Description: Cities class
 * */
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.LatLngBounds
 
 class Cities {
     //hashMap of city name and city object declaration
@@ -36,7 +34,7 @@ class Cities {
         return this.cities.get(name)
     }
 }
-
+// city class information
 class City {
     var name:String? = null
     var pizzaStoreIds = mutableListOf<String>()

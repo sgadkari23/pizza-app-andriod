@@ -38,6 +38,10 @@
         <item>Master</item>
         <item>Mestro</item>
     </string-array>
+    <string-array name="user_type">
+        <item>Admin</item>
+        <item>Customer</item>
+    </string-array>
     <string name="title_activity_pizza_stores">Map</string>
     <string name="title_activity_pizza_stores_map">Map</string>
     <string name="map_type_default">Standard View</string>
