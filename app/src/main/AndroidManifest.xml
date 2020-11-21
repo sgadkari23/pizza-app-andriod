@@ -16,8 +16,10 @@
             android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".AdminHomeActivity"
-            android:label="@string/admin_dashboard" />
-        <activity android:name=".SignUpActivity" />
+            android:parentActivityName=".UserLoginActivity"/>
+        <activity android:name=".SignUpActivity"
+            android:label="@string/user_signup"
+            android:parentActivityName=".MainActivity"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

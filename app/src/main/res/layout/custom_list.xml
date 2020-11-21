@@ -13,6 +13,7 @@
         android:layout_marginTop="15dp"
         android:fontFamily="@font/andada"
         android:text="TextView"
+        android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,44 +23,79 @@
         android:id="@+id/pizzaStatusSwitch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="32dp"
         android:layout_weight="1"
         android:showText="false"
         android:textOff="Delivered"
         android:textOn="In-Progress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <TextView
         android:id="@+id/pizzaStatusTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="36dp"
         android:fontFamily="@font/andada"
         android:text="TextView"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/pizzaStatusSwitch"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintEnd_toStartOf="@+id/pizzaStatusSwitch" />
 
     <TextView
-        android:id="@+id/orderDetailsTextView"
+        android:id="@+id/orderIdTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="1dp"
+        android:fontFamily="@font/andada"
+        android:text="Order Id:"
+        android:textColor="@color/colordividercolor"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customerFirstNameTextview" />
+
+    <TextView
+        android:id="@+id/orderIdIextView"
+        android:layout_width="55dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="2dp"
+        android:fontFamily="@font/andada"
+        android:text="TextView"
+        android:textColor="@color/colorAccent"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/addressorder"
+        app:layout_constraintStart_toEndOf="@+id/orderIdTextView"
+        app:layout_constraintTop_toBottomOf="@+id/customerFirstNameTextview" />
+
+    <TextView
+        android:id="@+id/addressorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/andada"
+        android:text="Address:"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderIdTextView" />
+
+    <TextView
+        android:id="@+id/orderAddressTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
         android:layout_marginBottom="15dp"
         android:fontFamily="@font/andada"
         android:text="TextView"
         android:textColor="@color/colorAccent"
-        android:textSize="16sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customerFirstNameTextview" />
+        app:layout_constraintStart_toEndOf="@+id/addressorder"
+        app:layout_constraintTop_toBottomOf="@+id/orderIdIextView"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

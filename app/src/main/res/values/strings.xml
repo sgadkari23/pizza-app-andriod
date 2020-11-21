@@ -27,8 +27,9 @@
     <string name="store_locations">Store Locations</string>
     <string name="smap">Stores in your location</string>
     <string name="edit_profile">Profile</string>
-    <string name="admin_dashboard">Dashboard</string>
+    <string name="admin_dashboard">Admin Dashboard</string>
     <string name="switch_button">Completed</string>
+    <string name="user_signup">Login Register</string>
     <string-array name="cities_name">
         <item>Austin</item>
         <item>Dallas</item>

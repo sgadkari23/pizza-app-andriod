@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="98dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="casual"
         android:text="First name:"
         android:textSize="18sp"
@@ -70,7 +70,7 @@
         android:id="@+id/firstNameEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="27dp"
         android:ems="10"
         android:fontFamily="casual"
@@ -120,15 +120,16 @@
 
     <Button
         android:id="@+id/userRegisterButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="130dp"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginBottom="184dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/andada"
         android:onClick="userRegisterOnButtonClick"
         android:text="Register"
+        android:textColor="@color/colorcontexttext"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
