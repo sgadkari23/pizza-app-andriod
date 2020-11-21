@@ -23,6 +23,9 @@ interface DAOAccess {
     @Update
     fun updateUser(userEntity: UserEntity)
 
+    @Update
+    fun updateOrder(orderEntity: OrderEntity)
+
     //@Query("update user set firstName=:firstnm, lastName =:lastnm where userName= :usernm")
     //fun updateUser(firstnm: String, lastnm: String, usernm: String)
     //fun updateUser(userName:String, firstName:String,lastName: String)

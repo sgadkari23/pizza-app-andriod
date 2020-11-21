@@ -11,10 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditProfileActivity"></activity>
+        <activity android:name=".EditProfileActivity"
+            android:label="@string/edit_profile"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".AdminHomeActivity"
-            android:label="@string/title_activity_admin_home" />
+            android:label="@string/admin_dashboard" />
         <activity android:name=".SignUpActivity" />
 
         <meta-data

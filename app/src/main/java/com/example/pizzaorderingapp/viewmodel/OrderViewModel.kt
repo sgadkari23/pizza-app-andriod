@@ -20,5 +20,8 @@ class OrderViewModel: ViewModel() {
         orderEntity = AppRepository.getAllOrders(context)
         return orderEntity
     }
+    fun updateOrder(context: Context, orderEntity: OrderEntity){
+        AppRepository.updateOrder(context,orderEntity)
+    }
 
 }

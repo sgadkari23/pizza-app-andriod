@@ -32,6 +32,13 @@ class AppRepository {
             }
         }
 
+        fun updateOrder(context: Context,orderEntity: OrderEntity){
+            appDatabase = initializeDB(context)
+            CoroutineScope(IO).launch {
+                //val updateDetails = UserEntity(userName=userName,firstName=firstName,lastName=lastName)
+                appDatabase!!.dao().updateOrder(orderEntity)
+            }
+        }
         fun insertData(context: Context, firstName: String, lastName: String, userName: String,  password: String,  roleType: String) {
 
             appDatabase = initializeDB(context)

@@ -35,7 +35,7 @@ class UserLoginActivity : AppCompatActivity() {
             var loginPassword = findViewById<EditText>(R.id.passwordEditText).text.toString()
             if(username.isNotEmpty() && loginPassword.isNotEmpty()) {
                 userViewModel.getUserDetails(this@UserLoginActivity, username)!!.observe(this, Observer {
-
+                    println("******password :"+it.password+" loginPassword"+loginPassword)
                     if (it == null) {
                         Toast.makeText(this, "Cannot find user. Please sign up!", Toast.LENGTH_LONG).show()
                     }
