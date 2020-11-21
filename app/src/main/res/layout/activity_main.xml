@@ -7,26 +7,11 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="21dp"
-        android:fontFamily="cursive"
-        android:shadowColor="@color/colorcontexttext"
-        android:text="Welcome to Pizza House !"
-        android:textColor="@color/colorhometext"
-        android:textSize="38sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/pizzaStoresTextView"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="76dp"
         android:fontFamily="@font/abeezee"
         android:shadowColor="@color/colorcontexttext"
         android:text="Select Pizza from Context Menu"
@@ -38,14 +23,13 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="380dp"
-        android:layout_height="500dp"
+        android:layout_height="434dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="15dp"
-        android:layout_marginBottom="28dp"
         android:contentDescription="@string/app_logo"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/chef" />
@@ -54,8 +38,8 @@
         android:id="@+id/pizzaStoresTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="10dp"
         android:autoLink="map"
         android:clickable="true"
         android:fontFamily="@font/abeezee"
@@ -66,5 +50,27 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView11"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="204dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:onClick="onStoreButtonClicked"
+        android:text="Stores"
+        android:textColor="@color/colorcontexttext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/updateProfileButton"
+        android:layout_width="207dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/colorhometext"
+        android:onClick="onUpdateProfileButtonClicked"
+        android:text="Update profile"
+        android:textColor="@color/colorcontexttext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

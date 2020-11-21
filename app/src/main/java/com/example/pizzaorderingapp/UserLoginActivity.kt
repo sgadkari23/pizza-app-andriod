@@ -48,9 +48,19 @@ class UserLoginActivity : AppCompatActivity() {
                                 apply()
                             }
 
-                            Toast.makeText(this, "Correct password. Welcome!", Toast.LENGTH_LONG).show()
-                            val intent = Intent(this@UserLoginActivity, MainActivity::class.java)
-                            startActivity(intent)
+                            Toast.makeText(this, "Login successful. Welcome!", Toast.LENGTH_LONG).show()
+
+                            if(it.roleType == "admin")
+                            {
+                                val intent = Intent(this@UserLoginActivity, AdminHomeActivity::class.java)
+                                startActivity(intent)
+                            }
+                            else
+                            {
+                                val intent = Intent(this@UserLoginActivity, MainActivity::class.java)
+                                startActivity(intent)
+                            }
+
                         } else {
                             Toast.makeText(this, "Incorrect password. Please try again", Toast.LENGTH_LONG).show()
                         }

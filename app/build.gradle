@@ -25,6 +25,9 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.wear:wear:1.0.0'
+    compileOnly 'com.google.android.wearable:wearable:2.5.0'
+
     // - - Room Persistence Library
     def room_version = "2.2.5"
     implementation "androidx.room:room-runtime:$room_version"

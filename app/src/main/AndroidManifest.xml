@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SignUpActivity"/>
+        <activity android:name=".EditProfileActivity"></activity>
+        <activity
+            android:name=".AdminHomeActivity"
+            android:label="@string/title_activity_admin_home" />
+        <activity android:name=".SignUpActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

@@ -7,6 +7,7 @@ import com.example.pizzaorderingapp.model.UserEntity
 import com.example.pizzaorderingapp.room.AppDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import java.util.*
 
@@ -21,6 +22,14 @@ class AppRepository {
 
         fun initializeDB(context: Context) : AppDatabase {
             return AppDatabase.getDataseClient(context)
+        }
+
+        fun updateUser(context: Context,userEntity: UserEntity){
+            appDatabase = initializeDB(context)
+            CoroutineScope(IO).launch {
+                //val updateDetails = UserEntity(userName=userName,firstName=firstName,lastName=lastName)
+                appDatabase!!.dao().updateUser(userEntity)
+            }
         }
 
         fun insertData(context: Context, firstName: String, lastName: String, userName: String,  password: String,  roleType: String) {

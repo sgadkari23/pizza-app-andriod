@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.Observer
@@ -20,32 +21,27 @@ import com.example.pizzaorderingapp.viewmodel.OrderViewModel
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var orderViewModel: OrderViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        orderViewModel = ViewModelProvider(this).get(OrderViewModel::class.java)
 
         val clickableText = findViewById(R.id.pizzaStoresTextView) as TextView
            clickableText.setOnClickListener {
             val intent = Intent(this@MainActivity, PizzaStoreCitiesActivity::class.java)
             startActivity(intent)
         }
+    }
 
-        orderViewModel.getAllOrders(this@MainActivity)?.observe(this, Observer {
+    fun onStoreButtonClicked(v:View){
+        val intent = Intent(this@MainActivity, PizzaStoreCitiesActivity::class.java)
+        startActivity(intent)
+    }
 
-            if (it == null) {
-                Toast.makeText(this, "Cannot find all orders!", Toast.LENGTH_LONG).show()
-            }
-            else {
-                for (order:OrderEntity in it)
-                {
-                    println("Order Status: " + order.status + " Username: " + order.userName)
-                }
-            }
-        })
+    fun onUpdateProfileButtonClicked(v:View){
+        val intent = Intent(this@MainActivity, EditProfileActivity::class.java)
+        startActivity(intent)
     }
 
     // Populate context menu

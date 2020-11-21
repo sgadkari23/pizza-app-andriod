@@ -6,9 +6,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.lifecycle.ViewModelProvider
-import androidx.room.Room
-import com.example.pizzaorderingapp.model.UserEntity
-import com.example.pizzaorderingapp.room.AppDatabase
 import com.example.pizzaorderingapp.viewmodel.UserViewModel
 
 class SignUpActivity : AppCompatActivity() {
@@ -46,7 +43,7 @@ class SignUpActivity : AppCompatActivity() {
         if(v.id == R.id.userRegisterButton){
             userViewModel.insertData(context = this@SignUpActivity,
                 firstName = findViewById<EditText>(R.id.firstNameEditText).text.toString(),
-                lastName = findViewById<EditText>(R.id.lastNameEditText).text.toString(),
+                lastName = findViewById<EditText>(R.id.updateLastNameEditText).text.toString(),
                 userName = findViewById<EditText>(R.id.emailIdEditText).text.toString(),
                 roleType = userType,
                 password = findViewById<EditText>(R.id.passwordEditText).text.toString())
