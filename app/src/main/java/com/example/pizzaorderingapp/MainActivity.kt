@@ -27,11 +27,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val clickableText = findViewById(R.id.pizzaStoresTextView) as TextView
+        /*val clickableText = findViewById(R.id.pizzaStoresTextView) as TextView
            clickableText.setOnClickListener {
             val intent = Intent(this@MainActivity, PizzaStoreCitiesActivity::class.java)
             startActivity(intent)
-        }
+        }*/
     }
 
     fun onStoreButtonClicked(v:View){
@@ -48,6 +48,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.pizza_types,menu)
         return true
+    }
+
+    fun onLogoutButtonPressed(v: View){
+        if(v.id == R.id.logoutButton){
+            val intent = Intent(this@MainActivity, UserLoginActivity::class.java)
+            Toast.makeText(this, "Logout successfully!", Toast.LENGTH_LONG).show()
+            startActivity(intent)
+        }
     }
 
     // Handler when user selects a pizza from context menu

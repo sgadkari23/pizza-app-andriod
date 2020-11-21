@@ -19,6 +19,7 @@ class EditProfileActivity : AppCompatActivity() {
     lateinit var userEditEntity: UserEntity
     lateinit var firstNameEditText: EditText
     lateinit var lastNameEditText: EditText
+    lateinit var passwordNameEditText: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +27,7 @@ class EditProfileActivity : AppCompatActivity() {
 
         firstNameEditText = findViewById<EditText>(R.id.updateFirstNameEditText)
         lastNameEditText = findViewById<EditText>(R.id.updateLastNameEditText)
+        passwordNameEditText = findViewById<EditText>(R.id.passwordEditText)
 
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         val sharedPref = this@EditProfileActivity?.getSharedPreferences("LoggedInUser", Context.MODE_PRIVATE)
@@ -40,6 +42,7 @@ class EditProfileActivity : AppCompatActivity() {
 
                 firstNameEditText.setText(it.firstName)
                 lastNameEditText.setText(it.lastName)
+                passwordNameEditText.setText(it.password)
                 userEditEntity = it
             }
         })
@@ -49,12 +52,14 @@ class EditProfileActivity : AppCompatActivity() {
         if(v.id == R.id.updateProfileButton) {
             userEditEntity.firstName = firstNameEditText.text.toString()
             userEditEntity.lastName = lastNameEditText.text.toString()
+            userEditEntity.password = passwordNameEditText.text.toString()
 
             userViewModel.updateUser(
                 context = this@EditProfileActivity,
                 userEditEntity
             )
             val intent = Intent(this@EditProfileActivity, MainActivity::class.java)
+            Toast.makeText(this, "Personal information updated.", Toast.LENGTH_SHORT).show()
             startActivity(intent)
         }
     }

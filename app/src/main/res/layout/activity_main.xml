@@ -10,15 +10,15 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/abeezee"
         android:shadowColor="@color/colorcontexttext"
         android:text="Select Pizza from Context Menu"
         android:textColor="@color/colortext"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -34,28 +34,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/chef" />
 
-    <TextView
-        android:id="@+id/pizzaStoresTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="10dp"
-        android:autoLink="map"
-        android:clickable="true"
-        android:fontFamily="@font/abeezee"
-        android:linksClickable="false"
-        android:text="@string/hyperlink"
-        android:textColor="@color/quantum_googblue900"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView11"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <Button
         android:id="@+id/button"
         android:layout_width="204dp"
         android:layout_height="60dp"
-        android:backgroundTint="@color/colorPrimaryDark"
+        android:backgroundTint="@color/quantum_googredA200"
         android:onClick="onStoreButtonClicked"
         android:text="Stores"
         android:textColor="@color/colorcontexttext"
@@ -66,11 +49,23 @@
         android:id="@+id/updateProfileButton"
         android:layout_width="207dp"
         android:layout_height="60dp"
-        android:backgroundTint="@color/colorhometext"
+        android:backgroundTint="@color/quantum_deeporangeA200"
         android:onClick="onUpdateProfileButtonClicked"
         android:text="Update profile"
         android:textColor="@color/colorcontexttext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:onClick="onLogoutButtonPressed"
+        android:text="Logout"
+        android:textColor="@color/colorcontexttext"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
