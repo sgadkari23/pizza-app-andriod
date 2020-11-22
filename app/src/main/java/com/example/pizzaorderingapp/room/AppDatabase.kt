@@ -7,6 +7,7 @@ import androidx.room.RoomDatabase
 import com.example.pizzaorderingapp.model.OrderEntity
 import com.example.pizzaorderingapp.model.UserEntity
 
+// create a database with user and order entity
 @Database(entities = [UserEntity::class, OrderEntity::class], version = 3, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
@@ -14,9 +15,11 @@ abstract class AppDatabase : RoomDatabase() {
 
      companion object {
 
+          // singleton object of the database
           @Volatile
           private var INSTANCE: AppDatabase? = null
 
+          // get database object instance
           fun getDataseClient(context: Context) : AppDatabase {
 
                if (INSTANCE != null) return INSTANCE!!

@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+// storing user (customer or admin) information
 @Entity(tableName = "user")
 data class UserEntity (
     @ColumnInfo(name = "firstName")var firstName:String,

@@ -5,6 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.*
 
+// Storing order information in Room database
 @Entity(tableName = "order")
 data class OrderEntity (
     @ColumnInfo(name = "fullName")var fullName: String,

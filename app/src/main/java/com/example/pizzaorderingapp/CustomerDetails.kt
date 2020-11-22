@@ -36,9 +36,11 @@ class CustomerDetails : AppCompatActivity() {
 
          fullName = findViewById<EditText>(R.id.editTextTextPersonName)
 
+         // extract username from shared preference
          val sharedPref = this@CustomerDetails?.getSharedPreferences("LoggedInUser", Context.MODE_PRIVATE)
 
          userName = sharedPref.getString("userName", "")!!
+
          // Extract firstname and last name of logged in user
          userViewModel.getUserDetails(this@CustomerDetails, userName)!!.observe(this, Observer {
 

@@ -27,6 +27,7 @@ class CheckoutActivity : AppCompatActivity() {
     var order:Order? = null
     var personalInformation:PersonalInformation? = null
 
+    // initialize order view model
     lateinit var orderViewModel: OrderViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,6 +66,7 @@ class CheckoutActivity : AppCompatActivity() {
             val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
             val timeStamp = current.format(formatter)
 
+            // insert new order to database
             orderViewModel.insertOrder(context = this@CheckoutActivity,
                 fullName = personalInformation?.fullName!!,
                 address = personalInformation?.address!!,

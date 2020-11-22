@@ -24,9 +24,11 @@ class MyListAdapter(val context: Activity,  val orders:List<OrderEntity>, val or
         return position.toLong()
     }
 
+    // individual row of list
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         var convertView = convertView
         convertView = LayoutInflater.from(context).inflate(R.layout.custom_list, parent, false)
+
         val titleText = convertView.findViewById(R.id.customerFirstNameTextview) as TextView
         val orderStatusSwitch = convertView.findViewById<Switch>(R.id.pizzaStatusSwitch)
         val statusTextView = convertView.findViewById<TextView>(R.id.pizzaStatusTextView)
@@ -38,9 +40,8 @@ class MyListAdapter(val context: Activity,  val orders:List<OrderEntity>, val or
         statusTextView.setText(order.status)
         titleText.setText(order.fullName)
         orderID.text = order.orderId.toString()
-        //+", "+order.address+", "+order.orderDate
         orderadd.text = order.address
-        //        println("order status "+order.status)
+
         if(order.status ==  "In Progress"){
             orderStatusSwitch.setChecked(true)
         }else
@@ -51,6 +52,7 @@ class MyListAdapter(val context: Activity,  val orders:List<OrderEntity>, val or
         orderStatusSwitch?.setOnCheckedChangeListener({ _ , isChecked ->
             statusTextView.text = if (isChecked) "In Progress" else "Delivered"
             order.status = if (isChecked) "In Progress" else "Delivered"
+            // update the delivery status of the order and store in database
             orderViewModel.updateOrder(
                 context = context,
                 order

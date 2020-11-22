@@ -13,7 +13,7 @@ import com.example.pizzaorderingapp.model.UserEntity
 import com.example.pizzaorderingapp.viewmodel.UserViewModel
 
 class EditProfileActivity : AppCompatActivity() {
-
+    // variable declaration
     lateinit var userViewModel: UserViewModel
     lateinit var userName: String
     lateinit var userEditEntity: UserEntity
@@ -47,7 +47,7 @@ class EditProfileActivity : AppCompatActivity() {
             }
         })
     }
-//findViewById<EditText>(R.id.updateLastNameEditText).text.toString(),
+
     fun onUpdateButtonPressed(v:View){
         if(v.id == R.id.updateProfileButton) {
             userEditEntity.firstName = firstNameEditText.text.toString()

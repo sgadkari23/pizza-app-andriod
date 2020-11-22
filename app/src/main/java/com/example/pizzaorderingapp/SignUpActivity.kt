@@ -11,12 +11,14 @@ import com.example.pizzaorderingapp.viewmodel.UserViewModel
 class SignUpActivity : AppCompatActivity() {
 
     lateinit var userType: String
+    // user view model to access user entity in the database
     lateinit var userViewModel: UserViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
+        // initilize user view model
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
         val userRegisterType = resources.getStringArray(R.array.user_type)
@@ -39,8 +41,10 @@ class SignUpActivity : AppCompatActivity() {
         }
     }
 
+    // on register button click
     fun userRegisterOnButtonClick(v: View) {
         if(v.id == R.id.userRegisterButton){
+            // call user model view to add user to database
             userViewModel.insertData(context = this@SignUpActivity,
                 firstName = findViewById<EditText>(R.id.firstNameEditText).text.toString(),
                 lastName = findViewById<EditText>(R.id.updateLastNameEditText).text.toString(),
@@ -48,6 +52,7 @@ class SignUpActivity : AppCompatActivity() {
                 roleType = userType,
                 password = findViewById<EditText>(R.id.passwordEditText).text.toString())
 
+            // start login activity
             val intent = Intent(this@SignUpActivity, UserLoginActivity::class.java)
             startActivity(intent)
         }
