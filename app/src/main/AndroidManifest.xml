@@ -67,7 +67,8 @@
             android:name=".PizzaSizeActivity"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".UserLoginActivity">
+        <activity
+            android:name=".UserLoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

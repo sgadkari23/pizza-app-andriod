@@ -30,6 +30,7 @@
     <string name="admin_dashboard">Admin Dashboard</string>
     <string name="switch_button">Completed</string>
     <string name="user_signup">Login Register</string>
+    <string name="user_login">Login</string>
     <string-array name="cities_name">
         <item>Austin</item>
         <item>Dallas</item>

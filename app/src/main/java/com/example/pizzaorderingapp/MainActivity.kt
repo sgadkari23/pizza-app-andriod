@@ -14,48 +14,36 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import com.example.pizzaorderingapp.model.OrderEntity
-import com.example.pizzaorderingapp.viewmodel.OrderViewModel
 
 class MainActivity : AppCompatActivity() {
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        /*val clickableText = findViewById(R.id.pizzaStoresTextView) as TextView
-           clickableText.setOnClickListener {
-            val intent = Intent(this@MainActivity, PizzaStoreCitiesActivity::class.java)
-            startActivity(intent)
-        }*/
     }
-
+    // intent call on store button click
     fun onStoreButtonClicked(v:View){
         val intent = Intent(this@MainActivity, PizzaStoreCitiesActivity::class.java)
         startActivity(intent)
     }
-
+    // intent call on update button click
     fun onUpdateProfileButtonClicked(v:View){
         val intent = Intent(this@MainActivity, EditProfileActivity::class.java)
         startActivity(intent)
     }
-
-    // Populate context menu
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.pizza_types,menu)
-        return true
-    }
-
+    // User Logout
     fun onLogoutButtonPressed(v: View){
         if(v.id == R.id.logoutButton){
             val intent = Intent(this@MainActivity, UserLoginActivity::class.java)
             Toast.makeText(this, "Logout successfully!", Toast.LENGTH_LONG).show()
             startActivity(intent)
         }
+    }
+
+    // Populate context menu
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.pizza_types,menu)
+        return true
     }
 
     // Handler when user selects a pizza from context menu
