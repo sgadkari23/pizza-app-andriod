@@ -2,6 +2,8 @@
     <string name="app_name">Pizza House</string>
     <string name="meat_supreme">Meat Supreme</string>
     <string name="super_hawaiian">Super Hawaiian</string>
+    <string name="admin_editprofile">Edit Profile</string>
+    <string name="admin_logout">Logout</string>
     <string name="veggie">Veggie</string>
     <string name="mediterranean">Mediterranean</string>
     <string name="cheddar_supreme">Cheddar Supreme</string>

@@ -1,6 +1,10 @@
 package com.example.pizzaorderingapp
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -39,6 +43,24 @@ class AdminHomeActivity : AppCompatActivity() {
                 listView.adapter = myListAdapter
             }
         })
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.admin_activities,menu)
+        return true
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.adminedit ->{
+                val intent = Intent(this@AdminHomeActivity, EditProfileActivity::class.java)
+                startActivity(intent)
+                //setContentView(R.layout.activity_edit_profile)
+            }
+            R.id.adminlogout ->{
+                val intent = Intent(this@AdminHomeActivity, UserLoginActivity::class.java)
+                startActivity(intent)
+            }
+        }
+        return true
     }
 }

@@ -50,7 +50,7 @@ class SignUpActivity : AppCompatActivity() {
                 lastName = findViewById<EditText>(R.id.updateLastNameEditText).text.toString(),
                 userName = findViewById<EditText>(R.id.emailIdEditText).text.toString(),
                 roleType = userType,
-                password = findViewById<EditText>(R.id.passwordEditText).text.toString())
+                password = findViewById<EditText>(R.id.updatepasswordEditText).text.toString())
 
             // start login activity
             val intent = Intent(this@SignUpActivity, UserLoginActivity::class.java)

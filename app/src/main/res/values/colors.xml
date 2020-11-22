@@ -9,5 +9,6 @@
     <color name="colorbackground">#DAD5D5</color>
     <color name="colordividercolor">#423F40</color>
     <color name="colorPizzaSize">#ECE2E2</color>
-    <color name="signup">#19d3da</color>
+    <color name="signup">#120078</color>
+    <color name="orderdetails">#16697a</color>
 </resources>

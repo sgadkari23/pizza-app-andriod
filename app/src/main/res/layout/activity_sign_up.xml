@@ -41,7 +41,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="51dp"
         android:fontFamily="@font/andada"
-        android:text="Email Id"
+        android:text="Username"
         android:textColor="@color/colordividercolor"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -116,7 +116,7 @@
         app:layout_constraintTop_toBottomOf="@+id/updateLastNameEditText" />
 
     <EditText
-        android:id="@+id/passwordEditText"
+        android:id="@+id/updatepasswordEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -150,6 +150,6 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="120dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/updatepasswordEditText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

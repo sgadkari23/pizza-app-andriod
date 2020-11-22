@@ -10,8 +10,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.room.Room
-import com.example.pizzaorderingapp.room.AppDatabase
 import com.example.pizzaorderingapp.viewmodel.UserViewModel
 
 class UserLoginActivity : AppCompatActivity() {
@@ -33,8 +31,8 @@ class UserLoginActivity : AppCompatActivity() {
     // on login button click
     fun loginButtonOnClick(v:View){
         if(v.id == R.id.loginButton){
-            var username = findViewById<EditText>(R.id.usernameEditText).text.toString()
-            var loginPassword = findViewById<EditText>(R.id.passwordEditText).text.toString()
+            var username = findViewById<EditText>(R.id.updateUsernameEditText).text.toString()
+            var loginPassword = findViewById<EditText>(R.id.updatepasswordEditText).text.toString()
 
             // validation of user input password
             if(username.isNotEmpty() && loginPassword.isNotEmpty()) {
