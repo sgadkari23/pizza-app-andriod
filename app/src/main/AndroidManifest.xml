@@ -15,8 +15,7 @@
             android:label="@string/edit_profile"
             android:parentActivityName=".MainActivity"/>
         <activity
-            android:name=".AdminHomeActivity"
-            android:parentActivityName=".UserLoginActivity"/>
+            android:name=".AdminHomeActivity"/>
         <activity android:name=".SignUpActivity"
             android:label="@string/user_signup"
             android:parentActivityName=".MainActivity"/>

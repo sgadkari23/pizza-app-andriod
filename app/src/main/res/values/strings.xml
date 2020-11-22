@@ -59,4 +59,42 @@
     values-round/strings.xml for round devices.
     -->
     <string name="hello_world">Hello Square World!</string>
+    <string name="update_user_name">First name</string>
+    <string name="update_user_lastname">Last name</string>
+    <string name="update_user_password">Password</string>
+    <string name="update_user_username">Username</string>
+    <string name="update_user_cutomer_fullname">Full name</string>
+    <string name="update_user_pizzesize">Size of Pizza</string>
+    <string name="update_user_pizzetopping">Toppings</string>
+    <string name="update_user_address">Address</string>
+    <string name="customer_mobileno">Mobile no</string>
+    <string name="customer_cardexpiry">CardExpiry</string>
+    <string name="customer_personalinformation">Personal Information</string>
+    <string name="customer_cardtype">CardType</string>
+    <string name="customer_address">Address</string>
+    <string name="customer_cardno">Card No</string>
+    <string name="cutomer_postalcode">Postal code</string>
+    <string name="update_contextmenuetext">Select Pizza from Context Menu</string>
+    <string name="update_profile_button">Update profile</string>
+    <string name="cutomer_logout">Logout</string>
+    <string name="pizza_stores">Stores</string>
+    <string name="select_pizza_size">Select your pizza size</string>
+    <string name="select_pizza_toppings">Select your pizza toppings</string>
+    <string name="user_firstname">First name</string>
+    <string name="user_lastname">Last name</string>
+    <string name="user_userlogin">Username</string>
+    <string name="user_password">Password</string>
+    <string name="user_roletype">User Type</string>
+    <string name="user_register_button">Register</string>
+    <string name="splash_text">Welcome to Pizza House !</string>
+    <string name="login_button">Login</string>
+    <string name="login_username">Username</string>
+    <string name="login_password">Password</string>
+    <string name="signup_page">Signup?</string>
+    <string name="login_title">User Login</string>
+    <string name="orderdetails_orderid">Order Id:</string>
+    <string name="orderdetails_address">Address:</string>
+    <string name="sample_test">Sample Test</string>
+    <string name="order_postalcode">Postal code</string>
+    <string name="submit_personal_informatio">Next</string>
 </resources>

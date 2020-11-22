@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:fontFamily="cursive"
-        android:text="Welcome to Pizza House !"
+        android:text="@string/splash_text"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="40sp"
         android:textStyle="bold"

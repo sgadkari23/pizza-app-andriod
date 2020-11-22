@@ -62,7 +62,7 @@ class EditProfileActivity : AppCompatActivity() {
                 context = this@EditProfileActivity,
                 userEditEntity
             )
-            if(userEditEntity.roleType =="Customer") {
+            if(userEditEntity.roleType =="customer") {
                 val intent = Intent(this@EditProfileActivity, MainActivity::class.java)
                 Toast.makeText(this, "Personal information updated.", Toast.LENGTH_SHORT).show()
                 startActivity(intent)

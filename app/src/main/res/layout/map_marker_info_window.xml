@@ -13,7 +13,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="6dp"
         android:fontFamily="@font/andada"
-        android:text="Sample Test"
+        android:text="@string/sample_test"
         android:textColor="@color/browser_actions_title_color"
         android:textSize="18sp"
         android:textStyle="bold"
