@@ -18,7 +18,7 @@ class UserLoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_login)
-        // initializr user view model
+        // initializer user view model
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
         val signupClickableText = findViewById(R.id.signupTextView) as TextView

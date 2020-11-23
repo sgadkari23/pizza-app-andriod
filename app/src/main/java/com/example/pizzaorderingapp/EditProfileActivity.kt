@@ -1,5 +1,10 @@
 package com.example.pizzaorderingapp
-
+/*
+* Application Name: Pizza App
+* Name : Supriya Gadkari & Raj Shahu
+* Group No: 3
+* Description: Update user profile
+* */
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -50,7 +55,7 @@ class EditProfileActivity : AppCompatActivity() {
             }
         })
     }
-
+// function called update button pressed
     fun onUpdateButtonPressed(v:View){
         if(v.id == R.id.updateProfileButton) {
             userEditEntity.firstName = firstNameEditText.text.toString()

@@ -1,5 +1,10 @@
 package com.example.pizzaorderingapp.model
-
+/*
+* Application Name: Pizza App
+* Name : Supriya Gadkari & Raj Shahu
+* Group No: 3
+* Description: order table
+* */
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey

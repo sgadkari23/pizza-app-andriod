@@ -1,5 +1,10 @@
 package com.example.pizzaorderingapp
-
+/*
+* Application Name: Pizza App
+* Name : Supriya Gadkari & Raj Shahu
+* Group No: 3
+* Description: adaptor for listing customer's order list
+* */
 import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View

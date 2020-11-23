@@ -1,5 +1,10 @@
 package com.example.pizzaorderingapp.room
-
+/*
+* Application Name: Pizza App
+* Name : Supriya Gadkari & Raj Shahu
+* Group No: 3
+* Description: Datasbase access object  class for table queries
+* */
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.pizzaorderingapp.Order

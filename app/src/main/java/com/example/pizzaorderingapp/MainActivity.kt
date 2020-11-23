@@ -5,14 +5,13 @@ package com.example.pizzaorderingapp
 * Group No: 3
 * Description: Home screen of Pizza app
 * */
-import android.content.Context
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {

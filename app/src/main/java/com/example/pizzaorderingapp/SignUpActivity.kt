@@ -1,4 +1,10 @@
 package com.example.pizzaorderingapp
+/*
+* Application Name: Pizza App
+* Name : Supriya Gadkari & Raj Shahu
+* Group No: 3
+* Description: User signup page activity
+* */
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -20,7 +26,6 @@ class SignUpActivity : AppCompatActivity() {
 
         // initilize user view model
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
-
         val userRegisterType = resources.getStringArray(R.array.user_type)
         val spinnerUsertype = findViewById<Spinner>(R.id.userTypeSpinner)
 

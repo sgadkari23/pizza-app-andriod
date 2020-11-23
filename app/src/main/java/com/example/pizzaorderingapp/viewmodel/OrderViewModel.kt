@@ -1,12 +1,15 @@
 package com.example.pizzaorderingapp.viewmodel
-
+/*
+* Application Name: Pizza App
+* Name : Supriya Gadkari & Raj Shahu
+* Group No: 3
+* Description: order table's viewmodel
+* */
 import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.example.pizzaorderingapp.model.OrderEntity
-import com.example.pizzaorderingapp.model.UserEntity
 import com.example.pizzaorderingapp.repository.AppRepository
-import java.util.*
 
 // Interface layer between the database repository and UI activity
 class OrderViewModel: ViewModel() {

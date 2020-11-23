@@ -1,5 +1,10 @@
 package com.example.pizzaorderingapp.room
-
+/*
+* Application Name: Pizza App
+* Name : Supriya Gadkari & Raj Shahu
+* Group No: 3
+* Description: Application database
+* */
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room

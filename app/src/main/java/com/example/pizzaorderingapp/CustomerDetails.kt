@@ -13,16 +13,13 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.room.Room
-import com.example.pizzaorderingapp.room.AppDatabase
 import com.example.pizzaorderingapp.viewmodel.UserViewModel
 
 class CustomerDetails : AppCompatActivity() {
+    // initializer user view model
     lateinit var userViewModel: UserViewModel
-
     var order:Order? = null
     val personalInformation = PersonalInformation()
-
     lateinit var fullName:EditText
     lateinit var userName:String
 
