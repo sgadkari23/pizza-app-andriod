@@ -76,7 +76,7 @@
     <string name="cutomer_postalcode">Postal code</string>
     <string name="update_contextmenuetext">Select Pizza from Context Menu</string>
     <string name="update_profile_button">Update profile</string>
-    <string name="cutomer_logout">Logout</string>
+    <string name="cutomer_place_pizza_order">Place Order</string>
     <string name="pizza_stores">Stores</string>
     <string name="select_pizza_size">Select your pizza size</string>
     <string name="select_pizza_toppings">Select your pizza toppings</string>
@@ -97,4 +97,9 @@
     <string name="sample_test">Sample Test</string>
     <string name="order_postalcode">Postal code</string>
     <string name="submit_personal_informatio">Next</string>
+    <string name="customer_logout">Logout</string>
+    <string name="customer_order_history">Order History</string>
+    <string name="customer_pizza_store">Pizza Store</string>
+    <string name="customer_update_profile">Update profile</string>
+    <string name="customer_order_track_button">Track</string>
 </resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/customerOrderHistory"
+        android:title="@string/customer_order_history"
+        android:orderInCategory="1" />
+
+    <item
+        android:id="@+id/customerProfileUpdate"
+        android:title="@string/customer_update_profile"
+        android:orderInCategory="2" />
+
+    <item
+        android:id="@+id/customerPizzaStore"
+        android:title="@string/customer_pizza_store"
+        android:orderInCategory="3" />
+
+    <item
+        android:id="@+id/customerLogout"
+        android:title="@string/customer_logout"
+        android:orderInCategory="4" />
+</menu>

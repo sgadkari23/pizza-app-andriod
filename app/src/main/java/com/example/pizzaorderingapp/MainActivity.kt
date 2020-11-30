@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
     // intent call on store button click
-    fun onStoreButtonClicked(v:View){
+ /*   fun onStoreButtonClicked(v:View){
         val intent = Intent(this@MainActivity, PizzaStoreCitiesActivity::class.java)
         startActivity(intent)
     }
@@ -32,16 +32,16 @@ class MainActivity : AppCompatActivity() {
     }
     // User Logout
     fun onLogoutButtonPressed(v: View){
-        if(v.id == R.id.logoutButton){
+        if(v.id == R.id.placeOrderButton){
             val intent = Intent(this@MainActivity, UserLoginActivity::class.java)
             Toast.makeText(this, "Logout successfully!", Toast.LENGTH_LONG).show()
             startActivity(intent)
         }
     }
-
+*/
     // Populate context menu
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.pizza_types,menu)
+        menuInflater.inflate(R.menu.customer_activities,menu)
         return true
     }
 
@@ -52,27 +52,29 @@ class MainActivity : AppCompatActivity() {
 
         // Set appropriate pizza type in order object based on user selection
         when(item.itemId){
-            R.id.meatSupreme ->{
-                order.pizzaType = getString(R.string.meat_supreme)
+            R.id.customerOrderHistory ->{
+                val intent = Intent(this@MainActivity, GetAllOrdersOfCustomerActivity::class.java)
+                startActivity(intent)
             }
-            R.id.superHawaiian ->{
-                order.pizzaType = getString(R.string.super_hawaiian)
+            R.id.customerProfileUpdate ->{
+                val intent = Intent(this@MainActivity, EditProfileActivity::class.java)
+                startActivity(intent)
             }
-            R.id.veggie ->{
-                order.pizzaType = getString(R.string.veggie)
+            R.id.customerPizzaStore ->{
+                val intent = Intent(this@MainActivity, PizzaStoreCitiesActivity::class.java)
+                startActivity(intent)
             }
-            R.id.mediterranean ->{
-                order.pizzaType = getString(R.string.mediterranean)
-                }
-            R.id.cheddarSupreme -> {
-                order.pizzaType = getString(R.string.cheddar_supreme)
+            R.id.customerLogout ->{
+                val intent = Intent(this@MainActivity, UserLoginActivity::class.java)
+                Toast.makeText(this, "Logout successfully!", Toast.LENGTH_LONG).show()
+                startActivity(intent)
             }
-        }
 
+        }
         // Call pizza size activity and pass order object through intent
-        val intent = Intent(this@MainActivity, PizzaSizeActivity::class.java)
+    /*    val intent = Intent(this@MainActivity, PizzaSizeActivity::class.java)
         intent.putExtra("pizzaOrder", order)
-        startActivity(intent)
+        startActivity(intent) */
         return true
     }
 }

@@ -11,14 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditProfileActivity"
-            android:label="@string/edit_profile"
-            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".GetAllOrdersOfCustomerActivity"></activity>
         <activity
-            android:name=".AdminHomeActivity"/>
-        <activity android:name=".SignUpActivity"
+            android:name=".EditProfileActivity"
+            android:label="@string/edit_profile"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".AdminHomeActivity" />
+        <activity
+            android:name=".SignUpActivity"
             android:label="@string/user_signup"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -66,8 +68,7 @@
             android:name=".PizzaSizeActivity"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity" />
-        <activity
-            android:name=".UserLoginActivity">
+        <activity android:name=".UserLoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

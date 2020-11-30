@@ -9,6 +9,7 @@ import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.example.pizzaorderingapp.model.OrderEntity
+import com.example.pizzaorderingapp.model.UserEntity
 import com.example.pizzaorderingapp.repository.AppRepository
 
 // Interface layer between the database repository and UI activity
@@ -27,6 +28,10 @@ class OrderViewModel: ViewModel() {
         return orderEntity
     }
 
+    fun getAllOrderOfCustomer(context: Context, emailId: String) : LiveData<List<OrderEntity>>? {
+        orderEntity = AppRepository.getAllCustomerOrders(context, emailId)
+        return orderEntity
+    }
     // update order information
     fun updateOrder(context: Context, orderEntity: OrderEntity){
         AppRepository.updateOrder(context,orderEntity)

@@ -30,6 +30,9 @@ interface DAOAccess {
     @Query("SELECT * FROM `order`")
     fun getAllOrders(): LiveData<List<OrderEntity>>
 
+    @Query("SELECT * FROM `order` WHERE userName =:userName")
+    fun getcustomerOrders(userName: String?):  LiveData<List<OrderEntity>>
+
     // update user entity by primary key
     @Update
     fun updateUser(userEntity: UserEntity)

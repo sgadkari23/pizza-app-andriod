@@ -69,6 +69,12 @@ class AppRepository {
             return userEntity
         }
 
+        fun getAllCustomerOrders(context: Context, emailId: String) :LiveData<List<OrderEntity>>?{
+
+            appDatabase = initializeDB(context)
+            orderEntity = appDatabase!!.dao().getcustomerOrders(emailId)
+            return orderEntity
+        }
         // insert new order
         fun insertOrder(context: Context, fullName: String, address: String, mobileNo: String,  postalCode: String,  cardNumber: String,  cardExpiry: String,  userName: String,  status: String,  orderDate: String) {
             appDatabase = initializeDB(context)

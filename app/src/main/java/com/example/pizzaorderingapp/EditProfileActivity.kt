@@ -17,7 +17,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.pizzaorderingapp.model.UserEntity
 import com.example.pizzaorderingapp.viewmodel.UserViewModel
 
-class EditProfileActivity : AppCompatActivity() {
+class   EditProfileActivity : AppCompatActivity() {
     // variable declaration
     lateinit var userViewModel: UserViewModel
     lateinit var userName: String

@@ -6,24 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/abeezee"
-        android:shadowColor="@color/colorcontexttext"
-        android:text="@string/update_contextmenuetext"
-        android:textColor="@color/colortext"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="380dp"
-        android:layout_height="434dp"
+        android:layout_height="500dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="15dp"
@@ -35,34 +21,11 @@
         app:srcCompat="@drawable/chef" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="204dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/quantum_googredA200"
-        android:onClick="onStoreButtonClicked"
-        android:text="@string/pizza_stores"
-        android:textColor="@color/colorcontexttext"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <Button
-        android:id="@+id/updateProfileButton"
-        android:layout_width="207dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/quantum_deeporangeA200"
-        android:onClick="onUpdateProfileButtonClicked"
-        android:text="@string/update_profile_button"
-        android:textColor="@color/colorcontexttext"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <Button
-        android:id="@+id/logoutButton"
+        android:id="@+id/placeOrderButton"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:backgroundTint="@color/colorPrimaryDark"
-        android:onClick="onLogoutButtonPressed"
-        android:text="@string/cutomer_logout"
+        android:text="@string/cutomer_place_pizza_order"
         android:textColor="@color/colorcontexttext"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
