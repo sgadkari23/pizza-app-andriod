@@ -7,27 +7,42 @@ package com.example.pizzaorderingapp
 * */
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.media.MediaPlayer
 import android.os.Bundle
+import android.os.IBinder
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-      //  setContentView(R.layout.activity_checkout)
+           //  setContentView(R.layout.activity_checkout)
+        val intent = Intent(this@MainActivity, AndroidBackgroundServices::class.java)
+        startService(intent)
     }
     // intent call on store button click
-  fun onPlaceOrderButtonClicked(v:View){
+  fun onPlaceOrderButtonClicked(v: View){
         val intent = Intent(this@MainActivity, PizzaTypeActivity::class.java)
         startActivity(intent)
     }
+
+  /*fun onPlayMusicButtonClicked(v: View){
+        val intent = Intent(this@MainActivity, AndroidBackgroundServices::class.java)
+        startService(intent)
+  }
+
+    fun onStopMusicButtonClicked(v: View){
+        val intent = Intent(this@MainActivity, AndroidBackgroundServices::class.java)
+        stopService(intent)
+    }
     // intent call on update button click
- /*   fun onUpdateProfileButtonClicked(v:View){
+   fun onUpdateProfileButtonClicked(v:View){
         val intent = Intent(this@MainActivity, EditProfileActivity::class.java)
         startActivity(intent)
     }
@@ -42,7 +57,7 @@ class MainActivity : AppCompatActivity() {
 */
     // Populate context menu
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.customer_activities,menu)
+        menuInflater.inflate(R.menu.customer_activities, menu)
         return true
     }
 
@@ -53,19 +68,21 @@ class MainActivity : AppCompatActivity() {
 
         // Set appropriate pizza type in order object based on user selection
         when(item.itemId){
-            R.id.customerOrderHistory ->{
+            R.id.customerOrderHistory -> {
                 val intent = Intent(this@MainActivity, GetAllOrdersOfCustomerActivity::class.java)
                 startActivity(intent)
             }
-            R.id.customerProfileUpdate ->{
+            R.id.customerProfileUpdate -> {
                 val intent = Intent(this@MainActivity, EditProfileActivity::class.java)
                 startActivity(intent)
             }
-            R.id.customerPizzaStore ->{
+            R.id.customerPizzaStore -> {
                 val intent = Intent(this@MainActivity, PizzaStoreCitiesActivity::class.java)
                 startActivity(intent)
             }
-            R.id.customerLogout ->{
+            R.id.customerLogout -> {
+                val stopIntent = Intent(this@MainActivity, AndroidBackgroundServices::class.java)
+                stopService(stopIntent)
                 val intent = Intent(this@MainActivity, UserLoginActivity::class.java)
                 Toast.makeText(this, "Logout successfully!", Toast.LENGTH_LONG).show()
                 startActivity(intent)
