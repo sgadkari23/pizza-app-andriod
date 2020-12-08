@@ -1,6 +1,8 @@
 package com.example.pizzaorderingapp
 
 import android.app.Activity
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,13 +10,14 @@ import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.Switch
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.isVisible
 import com.example.pizzaorderingapp.model.OrderEntity
 import com.example.pizzaorderingapp.viewmodel.OrderViewModel
 
 class CustomerOrderListAdapter (val context: Activity, val orders:List<OrderEntity>) : BaseAdapter() {
 
-
+    private val TAG:String = "OrderListAdaptor"
     override fun getCount(): Int {
 
         return orders.size
@@ -42,6 +45,11 @@ class CustomerOrderListAdapter (val context: Activity, val orders:List<OrderEnti
         if(order.status == "In Progress"){
             trackButtonVisibility.visibility = View.VISIBLE
         }
+        trackButtonVisibility.setOnClickListener(View.OnClickListener {
+          //  Log.i(TAG,"onClick")
+            val intent = Intent(context, CustomerOrderTrackingActivity::class.java)
+            context.startActivity(intent)
+        })
         titleText.setText(order.fullName)
         orderAddress.setText(order.address)
         orderStatusAddress.setText(order.status)

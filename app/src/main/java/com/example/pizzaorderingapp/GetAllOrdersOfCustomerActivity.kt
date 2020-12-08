@@ -1,9 +1,11 @@
 package com.example.pizzaorderingapp
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ListView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
@@ -42,6 +44,11 @@ class GetAllOrdersOfCustomerActivity : AppCompatActivity() {
             }
         })
 
+
+        fun handleOnTrackButtonPresed(v: View){
+            val intent = Intent(this@GetAllOrdersOfCustomerActivity, CustomerOrderTrackingActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }
