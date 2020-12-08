@@ -1,14 +1,16 @@
 package com.example.pizzaorderingapp
 
-import androidx.appcompat.app.AppCompatActivity
+import android.location.Location
 import android.os.Bundle
-
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import java.text.DecimalFormat
 
 class CustomerOrderTrackingActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -30,5 +32,20 @@ class CustomerOrderTrackingActivity : AppCompatActivity(), OnMapReadyCallback {
         val sydney = LatLng(-34.0, 151.0)
         mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+
+
+        val locationA = Location("Location A")
+
+        locationA.setLatitude(-34.0)
+
+        locationA.setLongitude(151.0)
+
+        val locationB = Location("Location B")
+
+        locationB.setLatitude(-33.0)
+
+        locationB.setLongitude(149.0)
+
+        Log.i("MapTest", locationA.distanceTo(locationB).toString())
     }
 }

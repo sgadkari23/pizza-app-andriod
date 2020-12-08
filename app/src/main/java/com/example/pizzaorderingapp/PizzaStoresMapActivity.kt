@@ -7,12 +7,16 @@ package com.example.pizzaorderingapp
 * */
 import android.app.Activity
 import android.content.Context
+import android.location.Location
+import android.opengl.Visibility
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -90,6 +94,14 @@ class PizzaStoresMapActivity : AppCompatActivity(), OnMapReadyCallback {
         val city = cities.getCity(citySelected)
         if (city != null) {
 
+            // Add home marker
+            val homeMarker = mMap.addMarker(MarkerOptions()
+                .position(city.customerHomeAddress!!)
+                .title("Home")
+                .icon(BitmapDescriptorFactory.defaultMarker( BitmapDescriptorFactory.HUE_GREEN)))
+            homeMarker.tag = InfoWindowData("Home", null, null, null, null, null)
+
+
             for(pizzaStoreId:String in city.pizzaStoreIds)
             {   // set camera
                 val zoomLevel = 11.0f
@@ -99,6 +111,17 @@ class PizzaStoresMapActivity : AppCompatActivity(), OnMapReadyCallback {
                     .addOnSuccessListener { response: FetchPlaceResponse ->
                         val place = response.place
                         val position: LatLng = place.latLng!!
+
+                        val locationA = Location("Home")
+                        locationA.setLatitude(city.customerHomeAddress?.latitude!!)
+                        locationA.setLongitude(city.customerHomeAddress?.longitude!!)
+                        val locationB = Location("pizzaStore")
+                        locationB.setLatitude(position.latitude)
+                        locationB.setLongitude(position.longitude)
+                        val deliveryDistance:Double =  locationA.distanceTo(locationB)*1.0 / 1000
+                        val AVERAGE_SPEED = 20.0 // km/hr
+                        val deliveryTime = (deliveryDistance/AVERAGE_SPEED * 60).toInt()
+
                         // add marker
                         val m = mMap.addMarker(MarkerOptions()
                             .position(position)
@@ -106,7 +129,7 @@ class PizzaStoresMapActivity : AppCompatActivity(), OnMapReadyCallback {
                             .snippet("Rating: " + place.rating)
                             .icon(BitmapDescriptorFactory.defaultMarker( BitmapDescriptorFactory.HUE_ORANGE)))
                         // Send data to infoWindow
-                        m.tag = InfoWindowData(place.name, place.address, place.rating, place.userRatingsTotal, place.openingHours)
+                        m.tag = InfoWindowData(place.name, place.address, place.rating, place.userRatingsTotal, place.openingHours, deliveryTime = deliveryTime)
                         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(position,zoomLevel))
                         }.addOnFailureListener { exception: Exception ->
                         if (exception is ApiException) {
@@ -128,15 +151,29 @@ class CustomInfoWindowForGoogleMap : GoogleMap.InfoWindowAdapter {
     override fun getInfoContents(marker: Marker): View {
         var mWindow = (mContext as Activity).layoutInflater.inflate(R.layout.map_marker_info_window, null)
         val title = mWindow.findViewById<TextView>(R.id.info_window_title)
+
         // accesssing the data passed  from marker
         val infoWindowData:InfoWindowData = marker.tag as InfoWindowData
         title.text = infoWindowData.title
 
         val rating= mWindow.findViewById<TextView>(R.id.info_window_rating)
-        rating.text = "Rating: "+infoWindowData.rating.toString()+" ("+infoWindowData.ratingsTotal+")"
+        if(infoWindowData.rating!=null)
+            rating.text = "Rating: "+infoWindowData.rating.toString()+" ("+infoWindowData.ratingsTotal+")"
+        else
+            rating.setVisibility(View.INVISIBLE)
 
         val address= mWindow.findViewById<TextView>(R.id.info_window_address)
-        address.text = infoWindowData.address
+        if(infoWindowData.address!=null)
+            address.text = infoWindowData.address
+        else
+            address.setVisibility(View.INVISIBLE)
+
+        val deliveryTimeTextView= mWindow.findViewById<TextView>(R.id.deliveryTimeTextView)
+        if(infoWindowData.deliveryTime!=null)
+            deliveryTimeTextView.text = "Estimated Time for Home Delivery: " + infoWindowData.deliveryTime.toString() + " min"
+        else
+            deliveryTimeTextView.setVisibility(View.INVISIBLE)
+
         return mWindow
     }
 
@@ -152,11 +189,14 @@ class InfoWindowData
     var rating:Double?
     var ratingsTotal:Int?
     var openingHours:OpeningHours?
-    constructor(title:String?, address:String?, rating:Double?, ratingsTotal:Int?, openingHours: OpeningHours?){
+    var deliveryTime:Int?
+
+    constructor(title:String?, address:String?, rating:Double?, ratingsTotal:Int?, openingHours: OpeningHours?, deliveryTime:Int?){
         this.title = title
         this.address = address
         this.rating = rating
         this.ratingsTotal = ratingsTotal
         this.openingHours = openingHours
+        this.deliveryTime = deliveryTime
     }
 }
