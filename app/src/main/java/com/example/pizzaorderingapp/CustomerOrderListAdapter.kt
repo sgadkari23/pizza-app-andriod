@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.Button
 import android.widget.Switch
 import android.widget.TextView
+import androidx.core.view.isVisible
 import com.example.pizzaorderingapp.model.OrderEntity
 import com.example.pizzaorderingapp.viewmodel.OrderViewModel
 
@@ -35,7 +37,11 @@ class CustomerOrderListAdapter (val context: Activity, val orders:List<OrderEnti
         val orderAddress: TextView =  convertView.findViewById(R.id.orderAddressTextView) as TextView
         val orderStatusAddress: TextView =  convertView.findViewById(R.id.customerOrderStatusTextView) as TextView
         val order = getItem(position)
+        val trackButtonVisibility = convertView.findViewById(R.id.trackButton) as Button
 
+        if(order.status == "In Progress"){
+            trackButtonVisibility.visibility = View.VISIBLE
+        }
         titleText.setText(order.fullName)
         orderAddress.setText(order.address)
         orderStatusAddress.setText(order.status)

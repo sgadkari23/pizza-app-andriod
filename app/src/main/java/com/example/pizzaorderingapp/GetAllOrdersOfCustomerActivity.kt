@@ -41,5 +41,7 @@ class GetAllOrdersOfCustomerActivity : AppCompatActivity() {
                 listView.adapter = myListAdapter
             }
         })
+
+
     }
 }
