@@ -38,6 +38,12 @@ class PizzaSizeActivity : AppCompatActivity() {
             val intent = Intent(this@PizzaSizeActivity, PizzaToppingActivity::class.java)
             val radio: RadioButton = findViewById(radioGroup.checkedRadioButtonId)
             order?.pizzaSize = radio.text.toString()
+            when(order?.pizzaSize){
+                "Small ($14)" -> order!!.cost = 14
+                "Medium ($18)" -> order!!.cost =18
+                "Large ($20)" -> order!!.cost =  20
+                "Extra-Large ($24)"-> order!!.cost = 24
+            }
             intent.putExtra("pizzaOrder", order)
             startActivity(intent)
         }

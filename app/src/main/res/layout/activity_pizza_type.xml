@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PizzaTypeActivity">
+
+    <RadioGroup
+        android:id="@+id/pizzaTypeRadioGroup"
+        android:layout_width="265dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/pizzaTypeButton"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/meatSupremeRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:fontFamily="@font/andada"
+            android:text="@string/meat_supreme"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonCheddarSupreme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:fontFamily="@font/andada"
+            android:text="@string/cheddar_supreme"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonVeggie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:fontFamily="@font/andada"
+            android:text="@string/veggie"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMediterranean"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:fontFamily="@font/andada"
+            android:text="@string/mediterranean"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonSuperHawaiian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:fontFamily="@font/andada"
+            android:text="@string/super_hawaiian"
+            android:textSize="18sp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/andada"
+        android:text="@string/please_choose_pizza_type"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/pizzaTypeRadioGroup"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/pizza_type" />
+
+    <Button
+        android:id="@+id/pizzaTypeButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="105dp"
+        android:layout_marginBottom="47dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:onClick="handleOnChoosePizzaTypeButtonClick"
+        android:text="@string/btn_next"
+        android:textColor="@color/colorcontexttext"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

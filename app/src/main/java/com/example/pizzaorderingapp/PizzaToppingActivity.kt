@@ -7,6 +7,7 @@ package com.example.pizzaorderingapp
 * */
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.CheckBox
 import androidx.appcompat.app.AppCompatActivity
@@ -39,13 +40,15 @@ class PizzaToppingActivity : AppCompatActivity() {
         val toppings = StringBuilder()
 
         if (checkBoxCheese.isChecked) {
-            toppings.append(getString(R.string.toppings_cheese)+"\n")
+            toppings.append(getString(R.string.toppings_cheese) +"\n")
+            order!!.cost = order!!.cost?.plus(1)
         }
         if (checkBoxGreenPepper.isChecked) {
             toppings.append(getString(R.string.toppings_greenpepper)+"\n")
         }
         if (checkBoxSmokedHam.isChecked) {
             toppings.append(getString(R.string.toppings_smokedham)+"\n")
+            order!!.cost = order!!.cost?.plus(4)
         }
         if (checkBoxSpinach.isChecked) {
             toppings.append(getString(R.string.toppings_spinach)+"\n")
@@ -55,7 +58,9 @@ class PizzaToppingActivity : AppCompatActivity() {
         }
 
         order?.toppings = toppings.toString()
+        Log.i("order?.toppings ","order?.toppings "+order?.toppings)
 
+        Log.i("Cost "," Total order "+order!!.cost)
         // Call customer details activity
         val intent = Intent(this@PizzaToppingActivity, CustomerDetails::class.java)
         intent.putExtra("pizzaOrder", order)

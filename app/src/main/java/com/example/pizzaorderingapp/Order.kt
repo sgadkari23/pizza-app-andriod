@@ -11,4 +11,5 @@ class Order : Serializable {
     var pizzaType: String?= null
     var pizzaSize: String? = null
     var toppings: String? =null
+    var cost:Int? = 0
 }

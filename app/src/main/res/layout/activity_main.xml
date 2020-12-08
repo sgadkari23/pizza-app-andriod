@@ -25,6 +25,7 @@
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:backgroundTint="@color/colorPrimaryDark"
+        android:onClick="onPlaceOrderButtonClicked"
         android:text="@string/cutomer_place_pizza_order"
         android:textColor="@color/colorcontexttext"
         app:layout_constraintBottom_toBottomOf="parent"

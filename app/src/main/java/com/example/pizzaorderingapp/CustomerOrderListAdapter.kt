@@ -33,11 +33,12 @@ class CustomerOrderListAdapter (val context: Activity, val orders:List<OrderEnti
 
         val titleText = convertView.findViewById(R.id.customerOrderTextView) as TextView
         val orderAddress: TextView =  convertView.findViewById(R.id.orderAddressTextView) as TextView
-
+        val orderStatusAddress: TextView =  convertView.findViewById(R.id.customerOrderStatusTextView) as TextView
         val order = getItem(position)
 
         titleText.setText(order.fullName)
         orderAddress.setText(order.address)
+        orderStatusAddress.setText(order.status)
         return convertView
     }
 

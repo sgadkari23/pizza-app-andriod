@@ -1,26 +1,28 @@
 <resources>
     <string name="app_name">Pizza House</string>
-    <string name="meat_supreme">Meat Supreme</string>
-    <string name="super_hawaiian">Super Hawaiian</string>
     <string name="admin_editprofile">Edit Profile</string>
     <string name="admin_logout">Logout</string>
+    <string name="meat_supreme">Meat Supreme</string>
+    <string name="super_hawaiian">Super Hawaiian</string>
     <string name="veggie">Veggie</string>
     <string name="mediterranean">Mediterranean</string>
     <string name="cheddar_supreme">Cheddar Supreme</string>
+    <string name="please_choose_pizza_type">Please select pizza type</string>
     <string name="please_choose_pizza_toppings">Choose pizza toppings</string>
     <string name="please_proceed_to_checkout">Proceed to Checkout</string>
     <string name="please_confirm_your_order">Confirm Your Order</string>
     <string name="please_choose_your_pizza_from_the_menu">Please choose your pizza from the menu</string>
     <string name="app_logo">app_logo</string>
     <string name="menu_icon">menu-icon</string>
-    <string name="rb_small">Small</string>
-    <string name="rb_medium">Medium</string>
-    <string name="rb_large">Large</string>
-    <string name="rb_extra_large">Extra-Large</string>
+    <string name="bt_receipt_download">Receipt Download</string>
+    <string name="rb_small">Small ($14)</string>
+    <string name="rb_medium">Medium ($18)</string>
+    <string name="rb_large">Large ($20)</string>
+    <string name="rb_extra_large">Extra-Large ($24)</string>
     <string name="splash_screen">splash-screen</string>
-    <string name="toppings_cheese">Cheese</string>
+    <string name="toppings_cheese">Cheese (+$1)</string>
     <string name="toppings_greenpepper">Green Pepper</string>
-    <string name="toppings_smokedham">Smoked Ham</string>
+    <string name="toppings_smokedham">Smoked Ham (+$4)</string>
     <string name="toppings_spinach">Spinach</string>
     <string name="toppings_blackolives">Black Olives</string>
     <string name="btn_next">Next</string>
@@ -30,6 +32,7 @@
     <string name="smap">Stores in your location</string>
     <string name="edit_profile">Profile</string>
     <string name="admin_dashboard">Admin Dashboard</string>
+    <string name="order_total_cost">Total Cost</string>
     <string name="switch_button">Completed</string>
     <string name="user_signup">Login Register</string>
     <string name="user_login">Login</string>
@@ -102,4 +105,5 @@
     <string name="customer_pizza_store">Pizza Store</string>
     <string name="customer_update_profile">Update profile</string>
     <string name="customer_order_track_button">Track</string>
+    <string name="cutomer_pizza_order_history">Your orders</string>
 </resources>

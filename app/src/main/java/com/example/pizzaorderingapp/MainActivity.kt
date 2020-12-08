@@ -19,14 +19,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+      //  setContentView(R.layout.activity_checkout)
     }
     // intent call on store button click
- /*   fun onStoreButtonClicked(v:View){
-        val intent = Intent(this@MainActivity, PizzaStoreCitiesActivity::class.java)
+  fun onPlaceOrderButtonClicked(v:View){
+        val intent = Intent(this@MainActivity, PizzaTypeActivity::class.java)
         startActivity(intent)
     }
     // intent call on update button click
-    fun onUpdateProfileButtonClicked(v:View){
+ /*   fun onUpdateProfileButtonClicked(v:View){
         val intent = Intent(this@MainActivity, EditProfileActivity::class.java)
         startActivity(intent)
     }
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity() {
     // Handler when user selects a pizza from context menu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Create new object of type Order
-        val order = Order()
+
 
         // Set appropriate pizza type in order object based on user selection
         when(item.itemId){

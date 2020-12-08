@@ -70,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="44dp"
         android:fontFamily="@font/andada"
         android:text="@string/customer_address"
         android:textColor="@color/colordividercolor"

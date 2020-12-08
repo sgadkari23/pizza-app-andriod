@@ -10,6 +10,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
@@ -19,6 +20,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.room.Room
 import com.example.pizzaorderingapp.viewmodel.OrderViewModel
 import com.example.pizzaorderingapp.viewmodel.UserViewModel
+import java.io.FileNotFoundException
+import java.io.FileOutputStream
+import java.io.IOException
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
@@ -29,6 +33,8 @@ class CheckoutActivity : AppCompatActivity() {
 
     // initialize order view model
     lateinit var orderViewModel: OrderViewModel
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +61,29 @@ class CheckoutActivity : AppCompatActivity() {
 
         val pizzaToppings = findViewById<TextView>(R.id.textViewPizzaToppings)
         pizzaToppings.text = order?.toppings
+
+        val pizzaTotalOrderCost = findViewById<TextView>(R.id.totalCostTextView)
+        pizzaTotalOrderCost.text = order?.cost.toString()
+    }
+
+    fun handleOnDownloadReceiptButtonClick(v:View){
+        val fileOutputStream: FileOutputStream
+        val fileText:String ="\n\n\n Pizza Store \n Name:"+personalInformation!!.fullName!!+
+                "\n Address:"+personalInformation!!.address!!+"\n Cost:"+order?.cost.toString()
+
+        try {
+            fileOutputStream = this.openFileOutput(personalInformation!!.fullName+"_PizzaReceipt", Context.MODE_PRIVATE)
+            fileOutputStream.write(fileText.toByteArray())
+        } catch (e: FileNotFoundException){
+            e.printStackTrace()
+        }catch (e: NumberFormatException){
+            e.printStackTrace()
+        }catch (e: IOException){
+            e.printStackTrace()
+        }catch (e: Exception){
+            e.printStackTrace()
+        }
+        Toast.makeText(applicationContext,"data save",Toast.LENGTH_LONG).show()
     }
 
     // Method to handle show button on click
