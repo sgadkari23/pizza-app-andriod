@@ -34,7 +34,9 @@
         <activity
             android:name=".CustomerOrderTrackingActivity"
             android:label="@string/title_activity_customer_order_tracking"/>
-        <activity android:name=".PizzaTypeActivity" />
+        <activity android:name=".PizzaTypeActivity"
+            android:label="@string/please_choose_pizza_type"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".GetAllOrdersOfCustomerActivity"
             android:label="@string/cutomer_pizza_order_history"
