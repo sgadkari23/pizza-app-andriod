@@ -107,4 +107,8 @@
     <string name="customer_order_track_button">Track</string>
     <string name="cutomer_pizza_order_history">Your orders</string>
     <string name="title_activity_customer_order_tracking">Map</string>
+    <string name="type_of_pizza_seleect">Type of Pizza:</string>
+    <string name="bt_place_order">Place Order</string>
+    <string name="title_update_profile">Update Profile</string>
+    <string name="bt_update">Update</string>
 </resources>

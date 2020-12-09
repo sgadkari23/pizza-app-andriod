@@ -24,10 +24,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:layout_marginBottom="20dp"
         android:fontFamily="@font/andada"
         android:text="TextView"
         android:textColor="@color/colordividercolor"
         android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customerOrderTextView" />
 
@@ -35,27 +37,26 @@
         android:id="@+id/orderStatusTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="32dp"
         android:fontFamily="@font/andada"
         android:text="Order Status :"
         android:textColor="@color/colorAccent"
-        android:textSize="14sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/orderAddressTextView" />
+        app:layout_constraintStart_toEndOf="@+id/customerOrderTextView" />
 
     <TextView
         android:id="@+id/customerOrderStatusTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="32dp"
         android:fontFamily="@font/andada"
         android:text="TextView"
         android:textColor="@color/colordividercolor"
-        android:textSize="14sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/orderStatusTextView" />
