@@ -1,11 +1,17 @@
 package com.example.pizzaorderingapp
+/*
+* Application Name: Pizza App
+* Name : Supriya Gadkari & Raj Shahu
+* Group No: 3
+* Description: Play music in background- Service
+* */
 
 import android.app.Service
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.IBinder
 import android.util.Log
-
+// android services for background music
 public class AndroidBackgroundServices: Service() {
     private val TAG = "MusicService"
     lateinit var mediaPlayer:MediaPlayer

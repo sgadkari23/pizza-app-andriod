@@ -1,4 +1,10 @@
 package com.example.pizzaorderingapp
+/*
+* Application Name: Pizza App
+* Name : Supriya Gadkari & Raj Shahu
+* Group No: 3
+* Description: Select pizza type activity
+* * */
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

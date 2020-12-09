@@ -1,19 +1,18 @@
 package com.example.pizzaorderingapp
+/*
+* Application Name: Pizza App
+* Name : Supriya Gadkari & Raj Shahu
+* Group No: 3
+* Description: Customer order history listing
+* */
 
 import android.app.Activity
-import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.Button
-import android.widget.Switch
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
-import androidx.core.view.isVisible
 import com.example.pizzaorderingapp.model.OrderEntity
-import com.example.pizzaorderingapp.viewmodel.OrderViewModel
 
 class CustomerOrderListAdapter (val context: Activity, val orders:List<OrderEntity>) : BaseAdapter() {
 
@@ -40,16 +39,7 @@ class CustomerOrderListAdapter (val context: Activity, val orders:List<OrderEnti
         val orderAddress: TextView =  convertView.findViewById(R.id.orderAddressTextView) as TextView
         val orderStatusAddress: TextView =  convertView.findViewById(R.id.customerOrderStatusTextView) as TextView
         val order = getItem(position)
-        val trackButtonVisibility = convertView.findViewById(R.id.trackButton) as Button
 
-        if(order.status == "In Progress"){
-            trackButtonVisibility.visibility = View.VISIBLE
-        }
-        trackButtonVisibility.setOnClickListener(View.OnClickListener {
-          //  Log.i(TAG,"onClick")
-            val intent = Intent(context, CustomerOrderTrackingActivity::class.java)
-            context.startActivity(intent)
-        })
         titleText.setText(order.fullName)
         orderAddress.setText(order.address)
         orderStatusAddress.setText(order.status)

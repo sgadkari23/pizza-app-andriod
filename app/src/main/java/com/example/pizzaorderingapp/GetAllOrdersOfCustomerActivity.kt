@@ -1,4 +1,10 @@
 package com.example.pizzaorderingapp
+/*
+* Application Name: Pizza App
+* Name : Supriya Gadkari & Raj Shahu
+* Group No: 3
+* Description: Get all order history of a customer activity
+* */
 
 import android.content.Context
 import android.content.Intent
@@ -43,12 +49,5 @@ class GetAllOrdersOfCustomerActivity : AppCompatActivity() {
                 listView.adapter = myListAdapter
             }
         })
-
-
-        fun handleOnTrackButtonPresed(v: View){
-            val intent = Intent(this@GetAllOrdersOfCustomerActivity, CustomerOrderTrackingActivity::class.java)
-            startActivity(intent)
-        }
-
     }
 }

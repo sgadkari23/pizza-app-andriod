@@ -7,9 +7,7 @@ package com.example.pizzaorderingapp
 * */
 
 import android.content.Intent
-import android.media.MediaPlayer
 import android.os.Bundle
-import android.os.IBinder
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -32,29 +30,6 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-  /*fun onPlayMusicButtonClicked(v: View){
-        val intent = Intent(this@MainActivity, AndroidBackgroundServices::class.java)
-        startService(intent)
-  }
-
-    fun onStopMusicButtonClicked(v: View){
-        val intent = Intent(this@MainActivity, AndroidBackgroundServices::class.java)
-        stopService(intent)
-    }
-    // intent call on update button click
-   fun onUpdateProfileButtonClicked(v:View){
-        val intent = Intent(this@MainActivity, EditProfileActivity::class.java)
-        startActivity(intent)
-    }
-    // User Logout
-    fun onLogoutButtonPressed(v: View){
-        if(v.id == R.id.placeOrderButton){
-            val intent = Intent(this@MainActivity, UserLoginActivity::class.java)
-            Toast.makeText(this, "Logout successfully!", Toast.LENGTH_LONG).show()
-            startActivity(intent)
-        }
-    }
-*/
     // Populate context menu
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.customer_activities, menu)
